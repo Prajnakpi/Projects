@@ -1,0 +1,503 @@
+<?xml version="1.0"?><!DOCTYPE pdf PUBLIC "-//big.faceless.org//report" "report-1.1.dtd">
+<pdf>
+<head>
+	<link name="NotoSans" type="font" subtype="truetype" src="${nsfont.NotoSans_Regular}" src-bold="${nsfont.NotoSans_Bold}" src-italic="${nsfont.NotoSans_Italic}" src-bolditalic="${nsfont.NotoSans_BoldItalic}" bytes="2" />
+	<#if .locale == "zh_CN">
+		<link name="NotoSansCJKsc" type="font" subtype="opentype" src="${nsfont.NotoSansCJKsc_Regular}" src-bold="${nsfont.NotoSansCJKsc_Bold}" bytes="2" />
+	<#elseif .locale == "zh_TW">
+		<link name="NotoSansCJKtc" type="font" subtype="opentype" src="${nsfont.NotoSansCJKtc_Regular}" src-bold="${nsfont.NotoSansCJKtc_Bold}" bytes="2" />
+	<#elseif .locale == "ja_JP">
+		<link name="NotoSansCJKjp" type="font" subtype="opentype" src="${nsfont.NotoSansCJKjp_Regular}" src-bold="${nsfont.NotoSansCJKjp_Bold}" bytes="2" />
+	<#elseif .locale == "ko_KR">
+		<link name="NotoSansCJKkr" type="font" subtype="opentype" src="${nsfont.NotoSansCJKkr_Regular}" src-bold="${nsfont.NotoSansCJKkr_Bold}" bytes="2" />
+	<#elseif .locale == "th_TH">
+		<link name="NotoSansThai" type="font" subtype="opentype" src="${nsfont.NotoSansThai_Regular}" src-bold="${nsfont.NotoSansThai_Bold}" bytes="2" />
+	</#if>
+    <macrolist>
+        <macro id="nlheader">
+            <table class="header" style="width: 100%;"><tr>
+	<td width="70%"><b>${record.subsidiary.legalname}</b><br />${record.subsidiary.custrecord_afaq_addressonprintlayouts}<br />${record.subsidiary.email} | ${record.subsidiary.url}<br />TRN : ${subsidiary.federalidnumber}</td>
+           <#if record.subsidiary.internalid?string == '6'>
+	<td rowspan="5" width="30%"><br /><img align="right" src="https://5041434.app.netsuite.com/core/media/media.nl?id=568404&amp;c=5041434&amp;h=9gCP4n01B64GtkaZunA-TL7Iotd9uSOR2M8y5ySrGy8MK8wN" style="top:-20px" /></td>
+		   <#else>
+	<td rowspan="5" width="30%"><br /><#if subsidiary.logo?length != 0><img align="right" src="${subsidiary.logo@url}" style="top:-20px" /> </#if></td>
+		   </#if> 
+
+	</tr></table>
+        </macro>
+        <macro id="nlfooter">
+            <table class="footer" style="width: 100%;"><tr>
+	<td align="right" width="60%" style="font-size:8px"><pagenumber/> of <totalpages/></td>
+	<td align="right" width="40%" style="font-size:8px">${record.tranid}&nbsp;&nbsp;&nbsp;${record.trandate}&nbsp;&nbsp;&nbsp;${record.createdfrom.tranid}</td>
+	<!-- <td align="right" width="10%" style="font-size:8px;margin-left:5px;">${record.trandate}</td>
+	<td align="right" width="15%" style="font-size:8px">${record.createdfrom.tranid}</td> -->
+
+
+	</tr></table>
+        </macro>
+    </macrolist>
+    <style type="text/css">*{
+            font-family: albertus, sans-serif;
+            table-layout: fixed;
+        }
+		table {
+         font-family: albertus;
+			font-size:7.8 pt;
+			table-layout: fixed;
+		}
+        th {
+          	font-weight: bold;
+            font-size: 8pt;
+            vertical-align: middle;
+            padding: 5px 6px 3px;
+            background-color: #e3e3e3;
+            color: #333333;
+        }
+        td {
+                     padding: 4px 6px;
+        }
+        b {
+            font-weight: bold;
+            color: #333333;
+        }
+        table.header td {
+        padding: 0;
+            font-size: 10pt;
+        }
+        table.footer td {
+          padding: 0;
+            font-size: 10pt;
+          padding-left: 5px;
+        }
+        table.itemtable th {
+         padding-bottom: 10px;
+            padding-top: 10px;
+        }
+        table.body td {
+         padding: 4px 6px;
+        }
+        table.total {
+            page-break-inside: avoid;
+        }
+        tr.totalrow {
+            background-color: #e3e3e3;
+            line-height: 200%;
+        }
+        td.totalboxtop {
+            font-size: 12pt;
+            background-color: #e3e3e3;
+        }
+        td.addressheader {
+        font-size: 8pt;
+            padding-top: 6px;
+            padding-bottom: 2px;
+        }
+        td.address {
+         padding-top: 0;
+        }
+        td.totalboxmid {
+         font-size: 28pt;
+            padding-top: 20px;
+            background-color: #e3e3e3;
+        }
+        td.totalboxbot {
+            background-color: #e3e3e3;
+            font-weight: bold;
+        }
+        span.title {
+            font-size: 24pt;
+             }
+        span.number {
+            font-size: 15pt;
+        }
+        span.itemname {
+            font-weight: bold;
+            line-height: 130%;
+        }
+        hr {
+            width: 100%;
+            color: #d3d3d3;
+            background-color: #d3d3d3;
+            height: 1px;
+        }
+</style>
+</head>
+<body header="nlheader" header-height="12%" footer="nlfooter" footer-height="8pt" padding="0.5in 0.25in 0.5in 0.25in" size="A4">
+
+<table  class="body" style="width:100%;margin-top:5px"><tr>
+    <#if record.custbody_afaq_approvalstatus=="Approved">
+<td><p align="center" font-size="20pt" table-layout ="fixed"><span><b>TAX INVOICE</b></span></p></td>
+<#else>
+<td><p align="center" font-size="20pt"><span><b>DRAFT INVOICE</b></span></p></td>
+</#if>
+</tr></table>
+
+<table border="1" class="body" style="width:100%; margin-top:-30px" ><tr>
+	<td border-right="1" border-bottom="0pt" colspan="5" width="50%">
+	<table><tr><td><strong>${record.entity.altname}</strong><br />${record.billaddress}<br /><b>Phone</b> : ${record.entity.phone}&nbsp;&nbsp;&nbsp;&nbsp;<b>Fax </b>: ${record.entity.fax}<br /><b>Email</b> : ${record.entity.email}&nbsp;&nbsp;&nbsp;&nbsp;<br/><b>Web </b>: ${record.entity.url}<br /><b>TRN</b> : ${record.entity.vatregnumber}<br /><b>Attn</b> : ${record.custbody_afaq_contacts.entityid}</td>
+
+	</tr></table></td>
+	<td  border-bottom="0pt" colspan="5" width="50%">
+<table width="100%">
+
+	<!-- <td font-size="10" ><b>Invoice No</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:${record.tranid}<br/><b>Invoice Date</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:${record.trandate}<br/><b>DeliveryNote</b>&nbsp; :${record.custbody_afaq_multiple_dn_for_printing}<br/><b>Project Ref. No.</b>&nbsp;&nbsp;&nbsp;: ${record.custbody_afaq_projcustorefe}<br/><b>Salesman&nbsp;&nbsp;</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:${record.salesrep}<br/><b>Currency&nbsp;&nbsp;</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: ${record.currency}<br/><b>Exchange Rate&nbsp;&nbsp;</b>&nbsp;&nbsp;:${record.exchangerate?string?replace('[^.,0-9]','','r')}<br/>
+	<b>Tax Category&nbsp;&nbsp;</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<#if record.custbody_afaq_export==true || record.taxtotal == 0>:0%	<#else>:5%
+	</#if>
+</td> -->
+<tr style="line-height:4px;" >
+<td width="32%"><b>Invoice No</b></td>
+<td width="5%">:</td>
+<td width="63%">${record.tranid}</td>
+</tr>
+
+<tr style="line-height:4px;">
+<td><b>Invoice Date</b></td>
+<td>:</td>
+<td>${record.trandate}</td>
+</tr>
+
+<tr>
+<td><b>Delivery Note</b></td>
+<td>:</td>
+<td><p align="left">${record.custbody_afaq_multiple_dn_for_printing}</p></td>
+</tr>
+
+
+<tr style="line-height:4px;">
+<td ><b>Sales Order No.</b></td>
+<td>:</td>
+<td>${record.createdfrom?string?replace('Sales Order #','')}</td>
+</tr>
+
+<tr style="line-height:4px;">
+<td><b>Salesman</b></td>
+<td>:</td>
+<td>${record.salesrep}</td>
+</tr>
+<tr style="line-height:4px;">
+<td><b>Currency</b></td>
+<td>:</td>
+<td>${record.currency}</td>
+</tr>
+<tr style="line-height:4px;">
+<td><b>Exchange Rate</b></td>
+<td>:</td>
+<#if record.currency?starts_with("AED") >
+<td>${record.exchangerate?string['#,##0.00']}</td>
+<#else>
+<td>${record.exchangerate?string['#,0.######']}</td>
+</#if>
+</tr>
+<tr style="line-height:4px;">
+<td><b>Tax Category</b></td>
+<td>:</td>
+<#if record.custbody_afaq_export==true || record.taxtotal == 0>
+<td>0%</td>
+<#else>
+<td>5%</td>
+</#if>
+</tr>
+
+    </table>
+	</td>
+	</tr></table>
+
+
+<table class="body" style="width: 100%; margin-top:10px"><tr>
+	<th align="center" border-bottom="1" border-left="1" border-right="1" border-top="1" width="25%">PO Number</th>
+	<th align="center" border-bottom="1" border-right="1" border-top="1" width="25%">Delivery Term</th>
+	<th align="center" border-bottom="1" border-right="1" border-top="1" width="25%">Delivery Date</th>
+	<th align="center" border-bottom="1" border-right="1" border-top="1" width="25%">Payment Term</th>
+	</tr>
+	<tr>
+	<td align="center" border-bottom="1" border-left="1" border-right="1" width="25%">${record.otherrefnum}</td>
+	<#if record.custbody_afaq_deliveryterm?has_content>
+	<td align="center" border-bottom="1" border-right="1" width="25%">${record.custbody_afaq_deliveryterm}</td>
+	<#else>
+	<td align="center" border-bottom="1" border-right="1" width="25%">N/A</td>
+	</#if><#if record.custbody_afaq_deliverydate?has_content>
+	<td align="center" border-bottom="1" border-right="1" width="25%">${record.custbody_afaq_deliverydate}</td>
+	<#else>
+	<td align="center" border-bottom="1" border-right="1" width="25%">N/A</td>
+	</#if>
+	<td align="center" border-bottom="1" border-right="1" width="25%">${record.terms}</td>
+	</tr></table>
+<#if record.item?has_content><#global count=1><#global count1=1><#global kitcount=1><#global grpcount=1><#assign discount=0/><#assign linetotal=0/><#assign exptotal=0/>
+
+<table class="itemtable" style="width: 100%;margin-top:10px"><!-- start items --><#list record.item as item><#if item_index==0>
+<thead><#assign discount=0/><#assign discountcheck=0/><#assign linetotal=0/>
+	<tr>
+	<th align="center" border-bottom="1" border-left="1" border-right="1" border-top="1" width="5%"><b>SN</b></th>
+	<th align="center" border-bottom="1" border-right="1" border-top="1" width="11%"><b>ITEM<br/>CODE</b></th>
+	<th align="center" border-bottom="1" border-right="1" border-top="1" width="21%"><b>DESCRIPTION</b></th>
+	<th align="center" border-bottom="1" border-right="1" border-top="1" width="8%"><b>QTY</b></th>
+	<th align="center" border-bottom="1" border-right="1" border-top="1" width="6%"><b>UOM</b></th>
+	<th align="center" border-bottom="1" border-right="1" border-top="1" width="9%"><b>UNIT<br/> PRICE</b></th>
+	<th align="center" border-bottom="1" border-right="1" border-top="1" width="13%"><b><p>TAXABLE<br/> AMOUNT</p></b></th>
+	<th align="center" border-bottom="1" border-right="1" border-top="1" width="6%"><b><p>VAT<br/> %</p></b></th>
+	<th align="center" border-bottom="1" border-right="1" border-top="1" width="12%"><b><p>VAT<br/> AMOUNT</p></b></th>	
+	<th align="center" border-bottom="1" border-right="1" border-top="1" width="13%"><b>TOTAL</b></th>
+	</tr>
+</thead>
+</#if><#if item.itemtype!='Discount' && item.itemtype!='Subtotal'><#if item.itemtype='Description'><tr>
+	<td background-color="#e3e3e3" border-bottom="1" border-left="1" border-right="1" colspan="7" width="100%"><b>${item.item}</b></td>
+	</tr>
+	<#if item.itemtype='Group'>
+	<tr>
+	<td border-bottom="1" border-left="1" border-right="1" width="4%"><b>${grpcount?int}<#assign grpcount=grpcount+1 /></b></td>
+	<td border-bottom="1" border-right="1" letter-spacing="-0.5px" width="11%"><b>${item.item}</b></td>
+	<td border-bottom="1" border-right="1" letter-spacing="-0.5px" width="21%"><p align="left">${item.description}</p></td>
+	<td align="center" border-bottom="1" border-right="1" width="8%">${item.quantity}</td>
+	<td align="center" border-bottom="1" border-right="1" width="6%">${item.units}</td>
+	<td align="right" border-bottom="1" border-right="1" width="9%">${item.rate?string['#,##0.00']}</td>
+	<td align="right" border-bottom="1" border-right="1" width="13%">${item.amount?string['#,##0.00']}</td>
+	<td align="right" border-bottom="1" border-right="1" width="6%">${item.taxrate1}</td>
+	<td align="right" border-bottom="1" border-right="1" width="12%">${item.tax1amt?string['#,##0.00']}</td>
+	<td align="right" border-bottom="1" border-right="1" width="13%">${item.grossamt?string['#,##0.00']}</td>
+	</tr>
+
+	<!-- <tr>
+		<td border-bottom="1" border-left="1" border-right="1" width="66%">Line Total</td>
+		<td border-bottom="1" border-left="1" border-right="1" width="6%">${record.subtotal?string['#,##0.00']}</td>
+		<td border-bottom="1" border-left="1" border-right="1" width="10%">${item.taxrate1}</td>
+		<td border-bottom="1" border-left="1" border-right="1" width="12%">${record.custbody_afaq_totalretentionamount?string['#,##0.00']}</td>
+	</tr> -->
+
+
+	</#if><#elseif item.itemtype='Kit'>
+	<tr>
+	<td border-bottom="1" border-left="1" border-right="1" width="4%"><b>${kitcount?int}<#assign kitcount=kitcount+1 /></b></td>
+	<td border-bottom="1" border-right="1" width="14%"><b>${item.item}</b></td>
+	<td border-bottom="1" border-right="1" width="21%">${item.description}</td>
+	<td align="center" border-bottom="1" border-right="1" width="6%">${item.quantity}</td>
+	<td align="center" border-bottom="1" border-right="1" width="7%">${item.units}</td>
+	<td align="right" border-bottom="1" border-right="1" width="12%">${item.rate?string['#,##0.00']}</td>
+	<td align="right" border-bottom="1" border-right="1" width="12%">${item.amount?string['#,##0.00']}</td>
+	<td align="right" border-bottom="1" border-right="1" width="6%">${item.taxrate1}</td>
+	<td align="right" border-bottom="1" border-right="1" width="10%">${item.tax1amt?string['#,##0.00']}</td>
+	<td align="right" border-bottom="1" border-right="1" width="12%">${item.grossamt?string['#,##0.00']}</td>
+	</tr>
+
+	<!-- <tr>
+		<td border-bottom="1" border-left="1" border-right="1" width="66%">Line Total</td>
+		<td border-bottom="1" border-left="1" border-right="1" width="6%">${record.subtotal?string['#,##0.00']}</td>
+		<td border-bottom="1" border-left="1" border-right="1" width="10%">${item.taxrate1}</td>
+		<td border-bottom="1" border-left="1" border-right="1" width="12%">${record.custbody_afaq_totalretentionamount?string['#,##0.00']}</td>
+	</tr> -->
+	<#assign count=1><#else>
+	<tr>
+	<td border-bottom="1" border-left="1" border-right="1" width="4%">${count?int}<#assign count=count+1 /></td>
+	<td border-bottom="1" border-right="1" width="14%">${item.item}</td>
+	<td border-bottom="1" border-right="1" width="21%">${item.description}</td>
+	<td align="center" border-bottom="1" border-right="1" width="6%">${item.quantity}</td>
+	<td align="center" border-bottom="1" border-right="1" width="7%">${item.units}</td>
+	<!-- <td align="right" border-bottom="1" border-right="1" width="12%">${item.rate?string['#,##0.00']}</td>
+	<td align="right" border-bottom="1" border-right="1" width="12%">${item.amount?string['#,##0.00']}</td>
+	<td align="right" border-bottom="1" border-right="1" width="6%">${item.taxrate1}</td>
+	<td align="right" border-bottom="1" border-right="1" width="10%">${item.tax1amt?string['#,##0.00']}</td>
+	<td align="right" border-bottom="1" border-right="1" width="12%">${item.grossamt?string['#,##0.00']}</td> -->
+
+	<td align="right" border-bottom="1" border-right="1" width="12%">${item.rate?string['#,##0.00']}</td>
+	<td align="right" border-bottom="1" border-right="1" width="12%">${item.amount?string['#,##0.00']}</td>
+	<td align="right" border-bottom="1" border-right="1" width="6%">${item.taxrate1}</td>
+	<td align="right" border-bottom="1" border-right="1" width="10%">${item.tax1amt?string['#,##0.00']}</td>
+	<td align="right" border-bottom="1" border-right="1" width="12%">${item.grossamt?string['#,##0.00']}</td>
+	</tr>
+
+	
+
+	<!-- <tr>
+		<td border-bottom="1" border-left="1" border-right="1" width="66%">Line Total</td>
+		<td border-bottom="1" border-left="1" border-right="1" width="6%">${record.subtotal?string['#,##0.00']}</td>
+		<td border-bottom="1" border-left="1" border-right="1" width="10%">${item.taxrate1}</td>
+		<td border-bottom="1" border-left="1" border-right="1" width="12%">${record.custbody_afaq_totalretentionamount?string['#,##0.00']}</td>
+	</tr> -->
+
+
+	</#if></#if><#if item.itemtype=="Discount"><#assign discount = discount + item.amount/><#assign discountcheck=1></#if><#if item.itemtype=="Subtotal"><#assign linetotal = linetotal + item.amount/></#if>
+	<#assign taxRate = item.taxrate1/>
+	
+	</#list><!-- end items --></table>
+</#if><#assign totalretention = record.custbody_afaq_retentionamount + record.custbody_afaq_retenionamount2/>
+<#assign totalline = record.subtotal + record.taxtotal/>
+<table border="0" class="body" style="width: 100%;" >
+
+<tr>
+		<td    border-left="1"  width="57%">Line Total</td>
+		<td    width="11.7%" align="center">${record.subtotal?string['#,##0.00']}</td>
+		<td   border-left = "1" width="4.7%" align="center">${taxRate}</td>
+		<td  border-left = "1"  width="11.2%" align="center">${record.taxtotal?string['#,##0.00']}</td>			
+		<td    width="12.1%" border-left = "1" border-right="1" align="right">${totalline?string['#,##0.00']}</td>
+
+	</tr>
+
+</table>
+
+
+<table border="0" class="body" style="width: 100%;page-break-inside: avoid;"  >
+
+<!-- <tr>
+		<td border-bottom="1" border-left="1" border-right="1" width="85%">Line Total</td>
+		<td border-bottom="1"  border-right="1" width="15%">${record.subtotal?string['#,##0.00']}</td>
+		
+	</tr> -->
+
+
+ <tr>
+    <!-- <td> -->
+
+	<!-- <table class="body" style="width: 100%;"><tr> -->
+	<td align="right" border-left="1" border-top="1" border-right="1"  width="87.5%"><b>SUBTOTAL</b></td>
+	<td align="right" border-bottom="1" border-top="1" border-right="1" width="12.5%">${record.subtotal?string['#,##0.00']}</td>
+	</tr>
+	<!-- <#if record.discounttotal!=0> -->
+	<!-- <tr>
+	<td align="right" border-left="1" border-right="1" colspan="6" width="85%"><b>DISCOUNT</b></td>
+	<td align="right" border-bottom="1" border-right="1" width="15%">${record.discounttotal?string['#,##0.00']}</td>
+	</tr> -->
+	<!-- </#if> -->
+  
+        <#assign subDisc = record.subtotal>
+       <#assign discTotal = record.discounttotal>
+      <#assign taxAmt = subDisc+discTotal >
+   
+
+
+	<tr>   
+	<td align="right" border-left="1"   border-right="1" width="88%"><b>DISCOUNT</b></td>
+	<#if  record.discounttotal != 0.00 >
+
+	<td align="right" border-bottom="1" border-right="1" width="12%"> ${record.discounttotal?string['#,##0.00']}</td>
+<#else>
+	<td align="right" border-bottom="1" border-right="1" width="12%">0.00</td>
+</#if>
+	</tr>
+
+
+	<!-- <tr>
+               
+	<td align="right" border-left="1"   border-right="1" colspan="6" width="85%"><b>Taxable Amount</b></td>
+	<td align="right" border-bottom="1" border-right="1" width="15%"> ${taxAmt?string["##,##,##,###.00"]}</td>
+	</tr> -->
+	<tr>
+	<td align="right" border-left="1" border-right="1"  width="88%"><b>VAT Amount</b></td>
+	<td align="right" border-bottom="1" border-right="1" width="12%">${record.taxtotal?string['#,##0.00']}</td>
+	</tr>
+	<#if record.custbody_afaq_deductions!=0>
+	<tr>
+	<td align="right" border-bottom="1" border-left="1" border-right="1" width="88%"><b>Deductions</b></td>
+	<td align="right" border-bottom="1" border-right="1" width="12%">${record.custbody_afaq_deductions?string['#,##0.00']}</td>
+	</tr>
+	</#if><#if record.custbody_afaq_retentionapplicable==true>
+	<tr>
+	<!-- <td align="left" border-bottom="1" border-left="1"  width="70%"><b><span align="left">${record.custbody_afaq_retentionremarks}</span></b></td> -->
+	<td align="right" border-bottom="1" border-right="1" border-left="1" letter-spacing="0.3px" width="15%">
+	<b><span align="left">${record.custbody_afaq_retentionremarks}</span></b><b>Retention</b></td>
+	<td align="right" border-bottom="1" border-right="1" width="15%"><p>(${record.custbody_afaq_retentionamount?string['#,##0.00']})</p></td>
+	</tr>
+	<#if record.custbody_afaq_retenionamount2!=0>
+	<tr>
+	<td align="left" border-bottom="1" border-left="1" width="70%"><b><span align="left">${record.custbody_afaq_retentionremarks2}</span></b></td>
+	<td align="right" border-bottom="1" border-right="1" letter-spacing="0.3px" width="15%"><b>Retention</b></td>
+	<td align="right" border-bottom="1" border-right="1" width="15%">$({record.custbody_afaq_retenionamount2?string['#,##0.00'])}</td>
+	</tr>
+	</#if><!-- <tr>
+	<td colspan="5" width="70%" border-left="1" border-bottom="1" align="left"><b><span align="left">${record.custbody_afaq_retentionremarks}</span></b></td>
+    <td width= "15%" border-bottom="1"  border-right="1" align="right" letter-spacing="0.3px"><b>Retentions</b></td>
+	<td width="15%" border-bottom="1" border-right="1" align="right">${totalretention}</td>
+	</tr>--></#if>
+	<tr>
+	<!-- <td align="left" border-bottom="1" border-left="1" width="50%"><b><span align="left">${record.custbody_afaq_retentionamountinwords}</span></b></td> -->
+	<td align="right" border-left="1" border-bottom="1" border-right="1" width="88%"><b>Total With VAT</b></td>
+	<td align="right" border-bottom="1" border-right="1" width="12%">${record.custbody_afaq_totalretentionamount?string['#,##0.00']}</td>
+	</tr>
+	<!-- <tr>
+	<td colspan="5" width="70%" border-left="1" border-bottom="1" align="left"><b><span align="left">${record.custbody_afaq_amountinwords}</span></b></td>
+    <td width= "15%" border-bottom="1"  border-right="1" align="right"><b>Total</b></td>
+	<td width="15%" border-bottom="1" border-right="1" align="right">${record.total?string['#,##0.00']}</td>
+	</tr>-->
+	<!-- </table> -->
+         
+         <!-- </td> -->
+  <!-- </tr> -->
+</table>
+
+
+<table border="0" class="body" style="width: 100%;" >
+
+<tr>
+		<td  border-left="1" width="88%"><b><span>${record.custbody_afaq_retentionamountinwords}</span></b></td>
+		<td  border-right="1"  width="12%"></td>
+	
+
+	</tr>
+
+</table>
+
+
+
+
+
+<table border="1" class="body" style="width: 100%;">
+ <tr>
+   <td>
+	<table class="body" style="width: 100%;" border-left = "-8px"><tr>
+	<td border-left="0" border-right="0" width="100%"><b>Bank Details</b></td>
+	</tr></table>
+
+<table style="width: 100%;" border-left = "-8px"><tr>
+	<td width="13%" border-top = "-7px">A/C Name</td>
+	<td  width="50%" border-top = "-7px">: ${record.custbody_afaq_bankdetails_acntname}</td>
+	<td  width="8%" border-top = "-7px">A/C No</td>
+	<td border-right="0" width="25%" border-top = "-7px">:${record.custbody_afaq_bankaccountnumber}</td>
+	</tr>
+	<tr>
+	<td width="13%" border-top = "-5px" >Bank</td>
+	<td width="50%" border-top = "-8px" >: ${record.custbody_afaq_bankdetails_bankname}</td>
+	<td width="8%" border-top = "-8px" >IBAN </td>
+	<td  border-right="0" width="%" border-top = "-8px" >:${record.custbody_afaq_bankdetails_iban}</td>
+	</tr>
+	<tr>
+	<td width="13%" border-top = "-4px" >Bank Address</td>
+	<td width="50%" border-top = "-7px" >: ${record.custbody_afaq_bankdetails_bankaddress}</td>
+	<td  width="8%" border-top = "-7px">SWIFT </td>
+	<td  border-right="0" width="25%" border-top = "-7px" >:${record.custbody_afaq_bankdetails_swiftcode}</td>
+	</tr></table>
+     </td>
+   </tr>
+</table>
+  <!-- <br /> -->
+           <!-- <br /> -->
+  <table border="0" class="body" style="width:100%;margin-top:10px" >
+ <tr>
+    <td>
+<table class="body" width="100%" style="margin-top:-13px;"><tr>
+	<td align="right" width="20%">&nbsp;</td>
+	<td align="right" width="30%">&nbsp;</td>
+	<td align="right" rowspan="2" width="50%" ><strong>${record.subsidiary.legalname}</strong></td>
+	</tr>
+	<tr>
+	<td width="20%">&nbsp;</td>
+	<td width="30%">&nbsp;</td>
+	<td rowspan="3" width="50%">&nbsp;</td>
+	</tr>
+  
+
+	<tr>
+	<td style="margin-left:-7px" border-bottom="1" border-left="1" border-top="1" width="20%">Received By</td>
+	<td  style="margin-left:-7px" border-bottom="1" border-left="1" border-right="1" border-top="1" width="30%">&nbsp;</td>
+	</tr>
+	<tr>
+	<td style="margin-left:-7px" border-bottom="1" border-left="1" width="20%">Signature &amp; Co. Stamp</td>
+	<td style="margin-left:-7px" border-bottom="1" border-left="1" border-right="1" width="30%">&nbsp;</td>
+	</tr>
+	<tr>
+	<td style="margin-left:-7px"  border-bottom="1" border-left="1" width="20%">Date</td>
+	<td style="margin-left:-7px" border-bottom="1" border-left="1" border-right="1" width="30%">&nbsp;</td>
+	<td align="right" rowspan="2" width="50%" style="margin-top:-40px" >&nbsp;________________<br/>Authorized Signatory</td>
+	</tr></table>
+ </td>
+  </tr>
+</table>
+</body>
+</pdf>

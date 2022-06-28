@@ -1,0 +1,870 @@
+<?xml version="1.0"?><!DOCTYPE pdf PUBLIC "-//big.faceless.org//report" "report-1.1.dtd">
+<pdf>
+<head>
+<link name="NotoSans" type="font" subtype="truetype" src="${nsfont.NotoSans_Regular}" src-bold="${nsfont.NotoSans_Bold}" src-italic="${nsfont.NotoSans_Italic}" src-bolditalic="${nsfont.NotoSans_BoldItalic}" bytes="2" />
+<#if .locale == "zh_CN">
+<link name="NotoSansCJKsc" type="font" subtype="opentype" src="${nsfont.NotoSansCJKsc_Regular}" src-bold="${nsfont.NotoSansCJKsc_Bold}" bytes="2" />
+<#elseif .locale == "zh_TW">
+<link name="NotoSansCJKtc" type="font" subtype="opentype" src="${nsfont.NotoSansCJKtc_Regular}" src-bold="${nsfont.NotoSansCJKtc_Bold}" bytes="2" />
+<#elseif .locale == "ja_JP">
+<link name="NotoSansCJKjp" type="font" subtype="opentype" src="${nsfont.NotoSansCJKjp_Regular}" src-bold="${nsfont.NotoSansCJKjp_Bold}" bytes="2" />
+<#elseif .locale == "ko_KR">
+<link name="NotoSansCJKkr" type="font" subtype="opentype" src="${nsfont.NotoSansCJKkr_Regular}" src-bold="${nsfont.NotoSansCJKkr_Bold}" bytes="2" />
+<#elseif .locale == "th_TH">
+<link name="NotoSansThai" type="font" subtype="opentype" src="${nsfont.NotoSansThai_Regular}" src-bold="${nsfont.NotoSansThai_Bold}" bytes="2" />
+</#if>
+<macrolist>
+
+<macro id="nlheader"> 
+<table class="header" style="width: 100%;">
+<tr>
+
+  <#if record.subsidiary.internalid?string == '3'>
+
+                                            <td align="left" valign="top" width="100%">
+
+                                                <img src="${subsidiary.logo@url}" style="width:200px;height:160px;position:absolute;padding-top:-95px;padding-left:-60px;top:15px;left:20px;" />
+
+                                            </td>
+
+
+
+                                        </#if>
+
+                                        <#if record.subsidiary.internalid?string == '10'>
+
+                                            <td align="left" valign="top" width="100%">
+
+                                                <img src="${subsidiary.logo@url}" style="width:100px;height:110px;position:absolute;padding-top:35px;padding-left:-55px;top:-45px;left:50px;" />
+
+                                            </td>
+
+
+
+                                        </#if>
+
+                                       <#if record.subsidiary.internalid?string == '6'>
+
+                                            <td align="left" valign="top" width="100%">
+
+                                                <img src="${subsidiary.logo@url}" style="width:200px;height:110px;position:absolute;padding-top:35px;padding-left:-55px;top:-32px;left:50px;" />
+
+                                            </td>
+
+
+
+                                        </#if>
+                                         <#if record.subsidiary.internalid?string == '13'>
+
+                                            <td align="left" valign="top" width="100%">
+
+                                                <img src="${subsidiary.logo@url}" style="width:200px;height:110px;position:absolute;padding-top:35px;padding-left:-55px;top:-35px;left:50px;" />
+
+                                            </td>
+
+
+
+                                        </#if>
+                                          <#if record.subsidiary.internalid?string == '4'>
+
+                                            <td align="left" valign="top" width="100%">
+
+                                                <img src="${subsidiary.logo@url}" style="width:200px;height:110px;position:absolute;padding-top:35px;padding-left:-55px;top:-60px;left:50px;" />
+
+                                            </td>
+
+
+
+                                        </#if>
+                                         <#if record.subsidiary.internalid?string == '7'>
+
+                                            <td align="left" valign="top" width="100%">
+
+                                                <img src="${subsidiary.logo@url}" style="width:100px;height:110px;position:absolute;padding-top:35px;padding-left:-55px;top:-45px;left:50px;" />
+
+                                            </td>
+
+
+
+                                        </#if>
+
+
+
+
+
+</tr>
+<!-- </table>
+<table class="header" style="width: 100%;"> -->
+
+<tr align="right" valign="top" style="width:120%;top:-40px" >
+                        <td align="right" valign="top" width="33%"><br/><br/>
+                        <b><#if subsidiary.name?has_content> ${subsidiary.name}</#if></b>
+                                <br/>
+                                <span style=" font-size: 9pt;"><#if subsidiary.mainaddress_text?has_content>${subsidiary.mainaddress_text}</#if></span>
+                                <br/>
+                                <span style=" font-size: 9pt;">TRN&nbsp;:&nbsp;<#if subsidiary.federalidnumber?has_content>${subsidiary.federalidnumber}</#if></span>
+                                </td>
+                                <td align="right" valign="top" width="33%">&nbsp;</td>
+                        </tr>
+</table>
+
+                             </macro> 
+<#if (record.status == "Pending Approval") >
+                            <macro id="watermark">
+<div rotate="-45" style="margin-top:400px;margin-left:50px;margin-right:50px;z-index:999;" font-size="20pt" color="#C0C0C0">
+<p>PENDING FOR APPROVAL</p>
+</div>
+</macro>
+</#if>
+
+                            <macro id="nlfooter">
+                                <table style="width: 100%;">
+                                    <tr>
+                                        <td align="left" style="width:60%;">
+                                            <p class="alignL" style="font-size:11px;font-style:italics;color:#A9A9A9">*This is a system-generated document. No signature is required.</p>
+                                        </td>
+
+                                        <td style="margin-left:150px;">&nbsp;( Page <pagenumber/>
+ of <totalpages/>
+ )&nbsp;</td>
+                                </tr>
+
+
+
+                            </table>
+                        </macro>
+                    </macrolist>
+                    <style type="text/css">span, table {
+                        <#if .locale=="zh_CN">font-family: stsong, sans-serif;
+                            <#elseif .locale=="zh_TW">font-family: msung, sans-serif;
+                                <#elseif .locale=="ja_JP">font-family: heiseimin, sans-serif;
+                                    <#elseif .locale=="ko_KR">font-family: hygothic, sans-serif;
+                                        <#elseif .locale=="ru_RU">font-family: verdana;
+                                            <#else>font-family: sans-serif;
+                                            </#if>font-size: 9pt;
+		table-layout: fixed;
+		}
+		th {
+		font-weight: bold;
+		font-size: 8.5pt;
+		padding-top: 2px;
+		vertical-align: middle;
+		/*padding: 3px 6px 10px;*/
+		/*background-color: #e3e3e3;
+		color: #333333;*/
+		}
+		b {
+		font-weight: bold;
+		color: #333333;
+		}
+		table.header td {
+		padding: 0;
+		font-size: 10pt;
+		}
+		table.footer td {
+		padding: 0;
+		font-size: 8pt;
+		}
+		#itemtable th p{
+		vertical-align: text-top !important;
+		text-align: center !important;
+		}
+		#itemtable{
+		font-size: 8.5pt !important;
+		border: 0.5px solid #000000
+		}
+		table.total {
+		page-break-inside: avoid;
+		}
+		tr.totalrow {
+		background-color: #e3e3e3;
+		line-height: 200%;
+		}
+		td.totalboxtop {
+		font-size: 12pt;
+		background-color: #e3e3e3;
+		}
+		span.title {
+		font-size: 28pt;
+		}
+		.smallTitle {
+		font-size: 9pt;
+		}
+		span.number {
+		font-size: 16pt;
+		text-align:center;
+		}
+		span.itemname {
+		font-weight: bold;
+		line-height: 150%;
+		}
+		hr {
+		width: 100%;
+		color: #d3d3d3;
+		background-color: #d3d3d3;
+		height: 1px;
+		}
+		table.smalltext tr td {
+		font-size: 8pt;
+		}
+		/*table.itemtable th{
+		border-bottom: 10px #ffc966;
+		border-color: yellow;
+		}*/
+		p.alignR {
+		text-align: right !important;
+		}
+		p.alignL {
+		text-align: left !important;
+		}
+		p.alignC {
+		text-align: center !important;
+		}
+		.td_right_line{
+		/*border-right: 0.5px solid #f4f4f4;*/
+		border-right :0.5px solid #000000;
+		}
+		.td_bottom_line{
+		border-bottom: 0.5px solid #000000;
+		}
+		.td_top_line{
+		/*border-top :0.5px solid #f4f4f4;*/
+		border-top :0.5px solid #000000;
+		}
+		.title{
+		font-weight: bold;
+		align:center!important;
+		font-size:16pt;
+		}
+		.footer-img{
+		/*width: 100%;
+		height: 20%;*/
+		top: 0px;
+		right: 0px;
+		left: 0px;
+		bottom: 0px;
+		}
+		.footer{
+		margin-left:-45px; margin-right:-60px; margin-bottom:-115px;
+		}
+		.td_left_line{
+		/*border-right: 0.5px solid #f4f4f4;*/
+		border-left :0.5px solid #000000;
+		}
+		.maintbl{
+		border:0.5px solid #000000;
+		}
+		.footertbl{
+		border:0.5px solid #000000;
+		border-top: 0px !important;
+		}
+		.footertbl2{
+		
+		/*border:0.5px solid #000000;*/
+		border-left: 0.5px solid #000000;
+		border-right: 0.5px solid #000000;
+		border-top: 0.25px !important;
+		}
+		.pad_left{
+		padding-left: 5px!important;
+		}
+		th,td{
+		padding:4px;
+		}
+		                                                                                                                                                                                                                            <!--  .td_top_line td{
+		padding-left: 5px!important;
+		} -->
+		td img {
+		max-width:100%;
+		
+		}
+                                        </style>
+                                    </head>
+                                    <body header="nlheader" background-macro="watermark" header-height="10%" footer="nlfooter" footer-height="4%" padding="0.25in 0.5in 0.25in 0.5in" size="A4">
+<table style="width:100%">
+            <tr><td align="center" class="title">
+                                                    <u>PAYMENT VOUCHER</u>
+                                                </td></tr>
+    </table>
+                                        <table border="0.5px solid #000000" border-bottom="0.25px solid #000000" style="width: 100%;margin-top:10px;">
+                                            <tr class="">
+                                                <td class="td_right_line" width="50%">
+                                                    <table align="right" width="100%">
+                                                        <tr>
+                                                            <td colspan="1" align="left" width="30%">
+                                                                <p align="left">
+                                                                    <b>Payment To</b>
+                                                                </p>
+                                                            </td>
+                                                            <td width="1%">
+                                                                <b>&nbsp;&nbsp;:&nbsp;&nbsp;</b>
+                                                            </td>
+                                                            <#if record.entity.isperson?string == "T">
+                                                                    <td><b>${record.entity.firstname}&nbsp;${record.entity.lastname}</b></td>
+                                                            <#else>
+                                                                    <td><b>${record.entity.companyname}</b></td>
+                                                            </#if>
+                                                        </tr>
+                                                        <#if record.entity.address?has_content>
+                                                        <tr>
+                                                            <td align="left" width="30%">
+                                                                <p align="left">
+                                                                    <b>Address</b>
+                                                                </p>
+                                                            </td>
+                                                            <td width="1%">
+                                                                <b>&nbsp;&nbsp;:&nbsp;&nbsp;</b>
+                                                            </td>
+                                                            <td align="left" width="64%">${record.entity.address}</td>
+                                                        </tr>
+                                                        </#if>
+                                                         <#if record.total?has_content>
+                                                        <tr>
+                                                            <td align="left" width="30%">
+                                                                <p align="left">
+                                                                    <b>Account</b>
+                                                                </p>
+                                                            </td>
+                                                            <td width="1%">
+                                                                <b>&nbsp;&nbsp;:&nbsp;&nbsp;</b>
+                                                            </td>
+                                                            <td align="left" width="64%" style="font-size:10px;">${record.account}</td>
+                                                        </tr>
+                                                        </#if>
+                                                       
+                                                        <#if record.total?has_content>
+                                                        <tr>
+                                                            <td align="left" width="30%">
+                                                                <p align="left">
+                                                                    <b>Amount</b>
+                                                                </p>
+                                                            </td>
+                                                            <td width="1%">
+                                                                <b>&nbsp;&nbsp;:&nbsp;&nbsp;</b>
+                                                            </td>
+                                                            <td align="left" width="64%">${record.total?string["#,##0.00"]}</td>
+                                                        </tr>
+                                                        </#if>
+                                                    </table>
+                                                </td>
+                                                <td align="left" width="50%">
+                                                    <table align="right" width="100%">
+                                                        <#if record.transactionnumber?has_content>
+                                                        <tr>
+                                                            <td colspan="1" align="left" width="32%">
+                                                                <p align="left">
+                                                                    <b>Transaction#</b>
+                                                                </p>
+                                                            </td>
+                                                            <td width="1%">
+                                                                <b>&nbsp;&nbsp;:&nbsp;&nbsp;</b>
+                                                            </td>
+                                                            <td align="left" width="62%">
+                                                                ${record.transactionnumber}
+                                                            </td>
+                                                            <td></td>
+                                                        </tr>
+                                                        </#if>
+                                                        <#if record.trandate?has_content>
+                                                        <tr>
+                                                            <td colspan="1" align="left" width="40%">
+                                                                <p align="left">
+                                                                    <b>Date</b>
+                                                                </p>
+                                                            </td>
+                                                            <td width="1%">
+                                                                <b>&nbsp;&nbsp;:&nbsp;&nbsp;</b>
+                                                            </td>
+                                                            <td align="left" width="54%">
+                                                                ${record.trandate?string("dd-MMM-YYYY")}
+                                                            </td>
+                                                            <td></td>
+                                                        </tr>
+                                                        </#if>
+                                                        <#if record.currencysymbol?has_content>
+                                                        <tr>
+                                                            <td align="left" width="40%">
+                                                                <p align="left">
+                                                                    <b>Currency</b>
+                                                                </p>
+                                                            </td>
+                                                            <td width="1%">
+                                                                <b>&nbsp;&nbsp;:&nbsp;&nbsp;</b>
+                                                            </td>
+                                                            <td align="left" width="64%">${record.currencysymbol}</td>
+                                                        </tr>
+                                                        </#if>
+                                                        <#if record.exchangerate?has_content>
+                                                        <tr>
+                                                            <td align="left" width="40%">
+                                                                <p align="left">
+                                                                    <b>Exchange Rate</b>
+                                                                </p>
+                                                            </td>
+                                                            <td width="1%">
+                                                                <b>&nbsp;&nbsp;:&nbsp;&nbsp;</b>
+                                                            </td>
+                                                            <td align="left" width="64%">
+                                                                <p align="left" style="text-decoration:none;">
+                                    ${record.exchangerate?string["#,##0.00"]}
+                                                                </p>
+                                                            </td>
+                                                        </tr>
+                                                        </#if>
+                                                       
+                                                       
+                                                        <#if record.custbody_kpib_bank_account?has_content>
+<tr>
+<td colspan="1" align="left" width="40%">
+                                                            <p align="left">
+                                                                <b>Bank Name</b>
+                                                            </p>
+                                                        </td>
+                                                        <td width="1%">
+                                                            <b>&nbs <#if record.custbody_kpib_payment_method?has_content>
+                                                        <tr>
+                                                            <td colspan="1" align="left" width="40%">
+                                                                <p align="left">
+                                                                    <b>Payment Mode</b>
+                                                                </p>
+                                                            </td>
+                                                            <td width="1%">
+                                                                <b>&nbsp;&nbsp;:&nbsp;&nbsp;</b>
+                                                            </td>
+                                                            <td align="left" width="54%">
+                                                                ${record.custbody_kpib_payment_method}
+                                                            </td>
+                                                            <td></td>
+                                                        </tr>
+                                                        </#if>p;&nbsp;:&nbsp;&nbsp;</b>
+                                                        </td>
+                                                        <td align="left" width="54%">
+                                                                ${record.custbody_kpib_bank_account}
+                                                        </td>
+                                                        <td></td>
+                                                    </tr>
+                                                </#if>
+                                                <#if record.custbody_kpib_cheque_number?has_content>
+<tr>
+<td colspan="1" align="left" width="40%">
+                                                    <p align="left">
+                                                        <b>Check No</b>
+                                                    </p>
+                                                </td>
+                                                <td width="1%">
+                                                    <b>&nbsp;&nbsp;:&nbsp;&nbsp;</b>
+                                                </td>
+                                                <td align="left" width="54%">
+                                                                ${record.custbody_kpib_cheque_number}
+                                                </td>
+                                                <td></td>
+                                            </tr>
+                                        </#if>
+                                        <#if record.custbody_kpib_cheque_date?has_content>
+<tr>
+<td colspan="1" align="left" width="40%">
+                                            <p align="left">
+                                                <b>Check Date</b>
+                                            </p>
+                                        </td>
+                                        <td width="1%">
+                                            <b>&nbsp;&nbsp;:&nbsp;&nbsp;</b>
+                                        </td>
+                                        <td align="left" width="54%">
+                                                                ${record.custbody_kpib_cheque_date}
+                                        </td>
+                                        <td></td>
+                                    </tr>
+                                </#if>
+
+                               
+                        <#if record.memo?has_content>
+                        <tr>
+                            <td align="left" width="40%">
+                                <p align="left">
+                                    <b>Memo</b>
+                                </p>
+                            </td>
+                            <td width="1%">
+                                <b>&nbsp;&nbsp;:&nbsp;&nbsp;</b>
+                            </td>
+                            <td align="left" width="64%"><p align="left"> ${record.memo}</p></td>
+                        </tr>
+                        </#if>
+                    </table>
+                </td>
+            </tr>
+        </table>
+
+        <#if record.apply?has_content>
+        <table class="itemtable" style="width: 100%;margin-top:10px;">
+            <tr>
+            <td align="left" colspan="19" class=""><b>Apply</b></td>
+            </tr>
+            </table>
+<table class="footertbl2" id="itemtable" style="width: 100%;">
+           
+            <tr style="padding-bottom: 0px;">
+                <td align="center" class="td_right_line">
+                    <b>Type</b>
+                </td>
+                <td align="center" class="td_right_line">
+                    <b>Ref#</b>
+                </td>
+                <td align="center" class="td_right_line">
+                    <b>Date</b>
+                </td>
+                <td align="right" >
+                    <b>Paid Amount</b>
+                </td>
+            </tr>
+            <#assign subtot=0/>
+            <#list record.apply as apply>
+
+<#if apply.apply?string == "Yes" >
+<tr>
+<td align="center" class="td_top_line td_right_line">
+                <p align="center">${apply.type}</p>
+            </td>
+            <td align="center" class="td_top_line td_right_line">
+                <p align="center">${apply.refnum}</p>
+            </td>
+            <td align="center" class="td_top_line td_right_line">
+                <p class="alignL">${apply.applydate}</p>
+            </td>
+            
+            <td align="right" class="td_top_line">
+                <p class="alignR">${apply.amount?string('##,#00.00')}</p>
+            </td>
+        </tr>
+        <#assign subtot=subtot + apply.amount/>
+        </#if>
+</#list>
+
+<#assign totalamt = record.unapplied + record.applied >
+<tr>
+<td align="right" class="td_right_line td_top_line" colspan="3" style="font-weight: bold;">Total</td>
+        <td align="right" class="td_top_line ">
+            <p class="alignR">
+                <b>&nbsp;${subtot?string('##,#00.00')}</b>
+            </p>
+        </td>
+    </tr>
+    <tr>
+        <td class="td_top_line " colspan="4">
+            <p class="alignL">
+                <b>Amount in Words&nbsp;:&nbsp;${record.currencysymbol}&nbsp;${record.custbody_total_amount_in_words}</b>
+            </p>
+        </td>
+    </tr>
+</table>
+</#if>
+
+<!-- <table style="width:100%;">
+ <tr>
+                        <td align="center">&nbsp;</td>
+                    </tr>
+                                                                        <tr style="width:100%;padding-top: 20px;">
+                                                                            <td align="left" style="width:40%;">
+                                                                                <table>
+                                                                                    <tr>
+                                                                                        <td>___________________</td>
+                                                                                    </tr>
+                                                                                    <tr>
+                                                                                        <td align="center">${record.custbody_abaad_prepared_by}</td>
+                                                                                    </tr>
+                                                                                    <tr>
+                                                                                        <td align="center">
+                                                                                            <b>Prepared By</b>
+                                                                                        </td>
+                                                                                    </tr>
+                                                                                </table>
+                                                                            </td>
+                                                                            <td align="right">
+                                                                                <table align="right">
+                                                                                    <tr>
+                                                                                        <td>___________________</td>
+                                                                                    </tr>
+
+                                                                                    <tr>
+                                                                                        <td align="center">
+                                                                                            <b>Received By</b>
+                                                                                        </td>
+                                                                                    </tr>
+                                                                                </table>
+                                                                            </td>
+                                                                        </tr>
+                                                                    </table> -->
+                                                                    <!-- <table style="width:100%;">
+ <tr style="width:100%;padding-top: 50px;">
+
+ <td align="left" style="width:20%;">
+  <table>
+   -->
+                                                                                                   <!-- <tr>
+                                                                                                        <td align="center" >${record.custbody_created_by}
+                                                                                                          <#if record.custbody_kpi_created_by.title?has_content>${record.custbody_kpi_created_by.title}
+                                                                                                         <#else>   
+                                                                                                            &nbsp;
+                                                                                                        </#if>
+                                                                                                        </td>
+                                                                                                    </tr>
+                                                                                                     <tr> -->
+                                                                                                        <!-- <td align="center" style="margin-top:-13px;">____________</td>
+                                                                                                    </tr>
+
+                                                                                                    <tr>
+                                                                                                        <td align="center">
+                                                                                                            <b>Created By</b>
+                                                                                                        </td>
+                                                                                                    </tr>
+                                                                                                </table>
+                                                                                            </td>
+                                                                                            <td align="left">
+                                                                                                <table align="center" >
+                                                                                                <tr> -->
+                                                                                                        <!-- <td align="center"> -->
+                                                                                                        <!-- ${record.custbody_kpi_first_approve_reject} -->
+
+                                                                                                        <!-- <#if record.custbody_kpi_first_approve_reject?has_content>${record.custbody_kpi_first_approve_reject}
+                                                                                                         <#else>   
+                                                                                                            &nbsp;
+                                                                                                        </#if> -->
+
+<!-- 
+                                                                                                        </td>
+                                                                                                    </tr>
+
+                                                                                                    <tr>
+                                                                                                        <td align="center" style="margin-top:-13px;">____________</td>
+                                                                                                    </tr>
+                                                                
+
+                                                                                                    <tr>
+                                                                                                        <td align="center">
+                                                                                                            <b>Approved By</b>
+                                                                                                        </td>
+                                                                                                    </tr>
+                                                                                                </table>
+                                                                                            </td>
+                                                                                              <td align="left"> -->
+                                                                                                <!-- <table align="left" >
+                                                                                                <tr>
+                                                                                                        <td align="center"> -->
+                                                                                                        <!-- ${record.custbody_kpi_second_approve_reject} -->
+
+                                                                                                        <!-- <#if record.custbody_kpi_second_approve_reject?has_content>${record.custbody_kpi_second_approve_reject}
+                                                                                                         <#else>   
+                                                                                                            &nbsp;
+                                                                                                        </#if>
+
+
+                                                                                                        </td>
+                                                                                                    </tr>
+
+                                                                                                    <tr>
+                                                                                                        <td align="center" style="margin-top:-13px;">____________</td>
+                                                                                                    </tr> -->
+                                                                
+
+                                                                                                    <!-- <tr>
+                                                                                                        <td align="center">
+                                                                                                            <b>Approved By</b>
+                                                                                                        </td>
+                                                                                                    </tr>
+                                                                                                </table>
+                                                                                            </td>
+                                                                                             <td align="left" >
+                                                                                                <table align="center">
+                                                                                                <tr>
+                                                                                                        <td align="center"> -->
+                                                                                                        <!-- ${record.custbody_kpi_third_approved_reject} -->
+
+                                                                                                        <!-- <#if record.custbody_kpi_third_approved_reject?has_content>${record.custbody_kpi_third_approved_reject}
+                                                                                                         <#else>   
+                                                                                                            &nbsp;
+                                                                                                        </#if>
+
+
+                                                                                                        </td> -->
+                                                                                                    <!-- </tr>
+
+                                                                                                    <tr>
+                                                                                                        <td align="center" style="margin-top:-13px;">_______________</td>
+                                                                                                    </tr>
+                                                                
+
+                                                                                                    <tr>
+                                                                                                        <td align="center">
+                                                                                                            <b>Approved By</b>
+                                                                                                        </td>
+                                                                                                    </tr>
+                                                                                                </table>
+                                                                                            </td> 
+                                                                                             <td align="center">
+                                                                                                <table align="center"> -->
+                                                                                                <!-- <tr>
+                                                                                                        <td align="center"> -->
+                                                                                                        <!-- ${record.custbody_kpi_fourth_approved_reject} -->
+ 
+                                                                                                        <!-- <#if record.custbody_kpi_fourth_approved_reject?has_content>${record.custbody_kpi_fourth_approved_reject}
+                                                                                                         <#else>   
+                                                                                                            &nbsp;
+                                                                                                        </#if>  -->
+
+<!-- 
+                                                                                                        </td>
+                                                                                                    </tr>
+
+                                                                                                    <tr>
+                                                                                                        <td align="center" style="margin-top:-13px;">_______________</td>
+                                                                                                    </tr>
+                                                                
+
+                                                                                                    <tr>
+                                                                                                        <td align="center">
+                                                                                                            <b>Approved By</b> -->
+                                                                                                        <!-- </td>
+                                                                                                    </tr>
+                                                                                                </table>
+                                                                                            </td>
+                                                                                           
+                                                                                        </tr>
+                                                                                    </table> -->
+                                                                                <#if subsidiary.internalid?string == '13'>   
+                                                                              <table style="width:100%;">
+ <tr style="width:100%;padding-top: 50px;">
+
+ <td align="left" style="width:20%;"> 
+  <table> 
+  
+                                                                                                   <tr>
+                                                                                                        <td align="center" >${record.custbody_nalg_created_by}
+                                                                                                          <#if record.custbody_nalg_created_by.title?has_content>${record.custbody_nalg_created_by.title}
+                                                                                                         <#else>   
+                                                                                                            &nbsp;
+                                                                                                        </#if>
+                                                                                                        </td>
+                                                                                                    </tr>
+                                                                                                     <tr>
+                                                                                                        <td align="center" style="margin-top:-13px;">____________</td>
+                                                                                                    </tr>
+
+                                                                                                    <tr>
+                                                                                                        <td align="center">
+                                                                                                            <b>Created By</b>
+                                                                                                        </td>
+                                                                                                    </tr>
+                                                                                                </table>
+                                                                                            </td> 
+                                                                          
+                                                                              <td align="center">
+                                                                                                <table align="center">
+                                                                                                <tr>
+                                                                                                        <td align="center">
+ 
+                                                                                                        <#if record.custbody_kpi_first_approve_reject?has_content>${record.custbody_kpi_first_approve_reject}
+                                                                                                         <#else>   
+                                                                                                            &nbsp;
+                                                                                                        </#if> 
+
+
+                                                                                                        </td>
+                                                                                                    </tr> 
+ 
+                                                                                                    <tr>
+                                                                                                        <td align="center" style="margin-top:-13px;">_______________</td>
+                                                                                                    </tr>
+                                                                
+
+                                                                                                    <tr>
+                                                                                                        <td align="center">
+                                                                                                            <b>Checked by</b>
+                                                                                                        </td>
+                                                                                                    </tr>
+                                                                                                </table>
+                                                                                            </td>
+                                                                                             <td align="center">
+                                                                                                <table align="center">
+                                                                                                <tr>
+                                                                                                        <td align="center">
+ 
+                                                                                                        <#if record.custbody_kpi_second_approve_reject?has_content>${record.custbody_kpi_second_approve_reject}
+                                                                                                         <#else>   
+                                                                                                            &nbsp;
+                                                                                                        </#if> 
+
+
+                                                                                                        </td>
+                                                                                                    </tr> 
+ 
+                                                                                                    <tr>
+                                                                                                        <td align="center" style="margin-top:-13px;">_______________</td>
+                                                                                                    </tr>
+                                                                
+
+                                                                                                    <tr>
+                                                                                                        <td align="center">
+                                                                                                            <b>Approved By</b>
+                                                                                                        </td>
+                                                                                                    </tr>
+                                                                                                </table>
+                                                                                            </td>
+                                                                                              <td align="right">
+                                                                                 <table align="center">
+                                                                                 <tr>
+                                                                                 </tr>
+                                                                                    <tr>
+                                                                                     <td align="center" style="margin-top:13px;">_______________</td>
+
+                                                                                        <!-- <td>___________________</td> -->
+                                                                                    </tr>
+
+                                                                                    <tr>
+                                                                                        <td align="center">
+                                                                                            <b>Received By</b>
+                                                                                        </td>
+                                                                                    </tr>
+                                                                                </table>
+                                                                            </td>
+                                                                        </tr>
+                                                                    </table> 
+                                                                    <#else> 
+                                                                     <table style="width:100%;">
+ <tr>
+                        <td align="center">&nbsp;</td>
+                    </tr>
+                                                                        <tr style="width:100%;padding-top: 20px;">
+                                                                            <td align="left" style="width:40%;">
+                                                                                <table>
+                                                                                    <tr>
+                                                                                        <td>___________________</td>
+                                                                                    </tr>
+                                                                                    <tr>
+                                                                                        <td align="center">${record.custbody_nalg_created_by}</td>
+                                                                                    </tr>
+                                                                                    <tr>
+                                                                                        <td align="center">
+                                                                                            <b>Prepared By</b>
+                                                                                        </td>
+                                                                                    </tr>
+                                                                                </table>
+                                                                            </td>
+                                                                            <td align="right">
+                                                                                <table align="right">
+                                                                                    <tr>
+                                                                                        <td>___________________</td>
+                                                                                    </tr>
+
+                                                                                    <tr>
+                                                                                        <td align="center">
+                                                                                            <b>Received By</b>
+                                                                                        </td>
+                                                                                    </tr>
+                                                                                </table>
+                                                                                </td>
+                                                                                 </tr>
+                                                                    </table>
+                                                                    </#if>
+</body>
+</pdf>
