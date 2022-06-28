@@ -85,7 +85,7 @@ define(['N/log', 'N/search', 'N/format', 'N/runtime'],
             }
            
         }
-       
+       var l;
 
         /**
          * Function to be executed after line is selected.
