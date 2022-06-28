@@ -11,6 +11,7 @@ col.push(search.createColumn({
 col.push(search.createColumn({
     name: 'entity'
 }));
+var f;
 
 
 filter.push(search.createFilter({
