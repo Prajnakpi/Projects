@@ -11,7 +11,7 @@ function formWithFieldApi(request, response)
    form.addField('PurposeofVisit','text', 'Purpose of visit', null,'visitorsgroup' );
    
         group.setShowBorder(true);
-        var b;
+        var bl;
         response.writePage(form);
     }
     else{
