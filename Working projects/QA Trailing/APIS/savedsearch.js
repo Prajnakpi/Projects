@@ -18,7 +18,7 @@ filter.push(search.createFilter({
     operator: search.Operator.ANYOF,
     values: AccountNetsuiteId
 }));
-
+var ffff;
 
 var invoiveSearch = {};
 invoiveSearch.type = rec_type;
