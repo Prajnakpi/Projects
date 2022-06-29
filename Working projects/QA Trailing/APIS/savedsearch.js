@@ -11,11 +11,32 @@ col.push(search.createColumn({
 col.push(search.createColumn({
     name: 'entity'
 }));
-var f;
+col.push(search.createColumn({
+    name: 'internalid',
+}));
+col.push(search.createColumn({
+    name: 'account'
+}));
+col.push(search.createColumn({
+    name: 'internalid',
+}));
+col.push(search.createColumn({
+    name: 'memo'
+}));
 
 
 filter.push(search.createFilter({
     name: 'entity',
+    operator: search.Operator.ANYOF,
+    values: AccountNetsuiteId
+}));
+filter.push(search.createFilter({
+    name: 'account',
+    operator: search.Operator.ANYOF,
+    values: AccountNetsuiteId
+}));
+filter.push(search.createFilter({
+    name: 'memo',
     operator: search.Operator.ANYOF,
     values: AccountNetsuiteId
 }));
@@ -36,8 +57,8 @@ log.debug("routeSearchResults.length", invoiceSearchResults.length)
 if (_isNotNullOREmpty(invoiceSearchResults)) {
     for (var j = 0; j < invoiceSearchResults.length; j++) {
 
-        var internalid = invoiceSearchResults[j].getValue({
-            name: "internalid",
+        var entity = invoiceSearchResults[j].getValue({
+            name: "entity",
             sort: search.Sort.DESC
         });
     }

@@ -28,7 +28,6 @@ define(['N/log', 'N/search', 'N/format', 'N/runtime', '../Modules/PRSUITE_moment
 
         function pageInitAction(scriptContext) {
             var currentReco = scriptContext.currentRecord;
-            var str = 'hello';
             currentReco.setValue({
                 fieldId: 'custrecord1405',
                 value: 123
