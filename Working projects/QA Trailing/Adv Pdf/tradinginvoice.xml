@@ -649,11 +649,9 @@
 </td>
                                                                 </tr>
                                                                         </table>
-                                                                         <#if record.custbody_bank_account?has_content>
-
-                                                                        <table style="width: 100%;margin-top:15px;">
-
-                                                                        <tr>
+                                                                         <!-- <#if record.custbody_bank_account?has_content> -->
+<table style="width: 100%;margin-top:15px;">
+<tr>
                                                                                 <th align="left" colspan="2" style="font-size:9pt;"><b>Please remit to:</b></th>
 
                                                                         </tr>
@@ -671,8 +669,10 @@
                                                                         <tr>
                                                                                 <td align="left" colspan="2">IBAN &nbsp;:&nbsp;${record.custbody_bank_account.custrecord_iban}</td>
                                                                         </tr>
+                                                                       
                                                                         </table>
-                                                                        </#if>
+                                                                        
+                                                                        <!-- </#if> -->
                                                                     <!-- </#if>
                                                                     <#if record.custbody_bank_account?has_content>
 <table style="width: 100%;margin-top:15px;">
