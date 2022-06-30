@@ -45,152 +45,7 @@
                                 </table>
                                 
                   
-                                 <!-- </head>
-                                    <body header="nlheader" background-macro="watermark" header-height="10%" footer="nlfooter" footer-height="4%" padding="0.25in 0.5in 0.25in 0.5in" size="A4"> -->
-                                 <table width="100%" style="margin-top:80px;">
-                                            <tr>
-                                                <td align="center" class="title">
-                                                    <u>EXPENSE REPORT</u>
-                                                </td>
-                                            </tr>
-                                        </table>
-                                        <table width="100%" border="0.5px solid #000000">
-                                            <tr>
-                                                <td width="50%" border-right="0.5px solid #000000">
-                                                    <table align="right" width="100%">
-                                                        <tr>
-                                                            <td align="left" width="30%">
-                                                                <p align="left">
-                                                                    <b>Payment To</b>
-                                                                </p>
-                                                            </td>
-                                                            <td width="1%">
-                                                                <b>&nbsp;&nbsp;:&nbsp;&nbsp;</b>
-                                                            </td>
-                                                                <td align="left" width="74%">
-                                                                    <b>${record.entity.firstname}&nbsp;${record.entity.lastname}</b>
-                                                                </td>
-                                                                
-                                                            </tr>
-                                                            <tr>
-                                                                <td align="left" width="35%">
-                                                                    <p align="left">
-                                                                        <b>Claim Ref No.</b>
-                                                                    </p>
-                                                                </td>
-                                                                <td width="1%">
-                                                                    <b>&nbsp;&nbsp;:&nbsp;&nbsp;</b>
-                                                                </td>
-                                                                <td align="left" width="64%"> ${record.billaddress}<br/>
-                                                                
-                                                                </td>
-                                                            </tr>
-                                                            <tr>
-                                                                <td align="left" width="35%">
-                                                                    <p align="left">
-                                                                        <b>Date</b>
-                                                                    </p>
-                                                                </td>
-                                                                <td width="1%">
-                                                                    <b>&nbsp;&nbsp;:&nbsp;&nbsp;</b>
-                                                                </td>
-                                                                <td align="left" width="64%">${record.trandate}</td>
-                                                            </tr>
-                                                            <tr>
-                                                                <td align="left" width="35%">
-                                                                    <p align="left">
-                                                                        <b>Subsidiary</b>
-                                                                    </p>
-                                                                </td>
-                                                                <td width="1%">
-                                                                    <b>&nbsp;&nbsp;:&nbsp;&nbsp;</b>
-                                                                </td>
-                                                                <td align="left" width="64%">
-                                                                    <p align="left" style="text-decoration:none;">
-                                ${record.subsidiary}
-                                                                    </p>
-                                                                </td>
-                                                            </tr>
-                                                          
-                                                            <tr>
-                                                            </tr>
-                                                        </table>
-                                                    </td>
-                                                    <td width="50%">
-                                                        <table width="100%">
-                                                            <tr>
-                                                                <td align="left" width="35%">
-                                                                    <p align="left">
-                                                                        <b>EXP.Rept#</b>
-                                                                    </p>
-                                                                </td>
-                                                                <td width="1%">
-                                                                    <b>&nbsp;&nbsp;:&nbsp;&nbsp;</b>
-                                                                </td>
-                                                                <td align="left" width="64%"><b>${record.tranid}</b></td>
-                                                            </tr>
-
-                                                            <tr>
-                                                                <td align="left" width="35%">
-                                                                    <p align="left">
-                                                                        <b>Currency</b>
-                                                                    </p>
-                                                                </td>
-                                                                <td width="1%">
-                                                                    <b>&nbsp;&nbsp;:&nbsp;&nbsp;</b>
-                                                                </td>
-                                                                <td align="left" width="64%">${record.expensereportcurrency}</td>
-                                                            </tr>
-                                                             <tr>
-                                                                <td align="left" width="35%">
-                                                                    <p align="left">
-                                                                        <b>Exchange Rate</b>
-                                                                    </p>
-                                                                </td>
-                                                                <td width="1%">
-                                                                    <b>&nbsp;&nbsp;:&nbsp;&nbsp;</b>
-                                                                </td>
-                                                                <td align="left" width="64%">${record.expensereportexchangerate}</td>
-                                                            </tr>
-                                                            <!-- <tr>
-                                                                <td align="left" width="35%">
-                                                                    <p align="left">
-                                                                        <b>Payment Mode</b>
-                                                                    </p>
-                                                                </td>
-                                                                <td width="1%">
-                                                                    <b>&nbsp;&nbsp;:&nbsp;&nbsp;</b>
-                                                                </td>
-                                                                <td align="left" width="64%"></td>
-                                                            </tr> -->
-
-                                                            <tr>
-                                                                <td align="left" width="35%">
-                                                                    <p align="left">
-                                                                        <b>Claim Category</b>
-                                                                    </p>
-                                                                </td>
-                                                                <td width="1%">
-                                                                    <b>&nbsp;&nbsp;:&nbsp;&nbsp;</b>
-                                                                </td>
-                                                                <td align="left" width="64%">${record.custbody_expensereport_category}</td>
-                                                            </tr>
-                                                              <tr>
-                                                                <td align="left" width="35%">
-                                                                    <p align="left">
-                                                                        <b>Total Amount</b>
-                                                                    </p>
-                                                                </td>
-                                                                <td width="1%">
-                                                                    <b>&nbsp;&nbsp;:&nbsp;&nbsp;</b>
-                                                                </td>
-                                                                <td align="left" width="64%">${record.custbody_total_amount_3_decimal}</td>
-                                                            </tr>
-
-                                                        </table>
-                                                    </td>
-                                                </tr>
-                                            </table>
+                                
 
                             </macro> 
 
@@ -356,8 +211,153 @@
 		
 		}
                                         </style>
-                                    </head> -->
+                                    </head>
                                      <body header="nlheader" background-macro="watermark" header-height="23%" footer="nlfooter" footer-height="4%" padding="0.25in 0.5in 0.25in 0.5in" size="A4">
+                                 <table width="100%" style="margin-top:80px;">
+                                            <tr>
+                                                <td align="center" class="title">
+                                                    <u>EXPENSE REPORT</u>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                        <table width="100%" border="0.5px solid #000000">
+                                            <tr>
+                                                <td width="50%" border-right="0.5px solid #000000">
+                                                    <table align="right" width="100%">
+                                                        <tr>
+                                                            <td align="left" width="30%">
+                                                                <p align="left">
+                                                                    <b>Payment To</b>
+                                                                </p>
+                                                            </td>
+                                                            <td width="1%">
+                                                                <b>&nbsp;&nbsp;:&nbsp;&nbsp;</b>
+                                                            </td>
+                                                                <td align="left" width="74%">
+                                                                    <b>${record.entity.firstname}&nbsp;${record.entity.lastname}</b>
+                                                                </td>
+                                                                
+                                                            </tr>
+                                                            <tr>
+                                                                <td align="left" width="35%">
+                                                                    <p align="left">
+                                                                        <b>Claim Ref No.</b>
+                                                                    </p>
+                                                                </td>
+                                                                <td width="1%">
+                                                                    <b>&nbsp;&nbsp;:&nbsp;&nbsp;</b>
+                                                                </td>
+                                                                <td align="left" width="64%"> ${record.billaddress}<br/>
+                                                                
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td align="left" width="35%">
+                                                                    <p align="left">
+                                                                        <b>Date</b>
+                                                                    </p>
+                                                                </td>
+                                                                <td width="1%">
+                                                                    <b>&nbsp;&nbsp;:&nbsp;&nbsp;</b>
+                                                                </td>
+                                                                <td align="left" width="64%">${record.trandate}</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td align="left" width="35%">
+                                                                    <p align="left">
+                                                                        <b>Subsidiary</b>
+                                                                    </p>
+                                                                </td>
+                                                                <td width="1%">
+                                                                    <b>&nbsp;&nbsp;:&nbsp;&nbsp;</b>
+                                                                </td>
+                                                                <td align="left" width="64%">
+                                                                    <p align="left" style="text-decoration:none;">
+                                ${record.subsidiary}
+                                                                    </p>
+                                                                </td>
+                                                            </tr>
+                                                          
+                                                            <tr>
+                                                            </tr>
+                                                        </table>
+                                                    </td>
+                                                    <td width="50%">
+                                                        <table width="100%">
+                                                            <tr>
+                                                                <td align="left" width="35%">
+                                                                    <p align="left">
+                                                                        <b>EXP.Rept#</b>
+                                                                    </p>
+                                                                </td>
+                                                                <td width="1%">
+                                                                    <b>&nbsp;&nbsp;:&nbsp;&nbsp;</b>
+                                                                </td>
+                                                                <td align="left" width="64%"><b>${record.tranid}</b></td>
+                                                            </tr>
+
+                                                            <tr>
+                                                                <td align="left" width="35%">
+                                                                    <p align="left">
+                                                                        <b>Currency</b>
+                                                                    </p>
+                                                                </td>
+                                                                <td width="1%">
+                                                                    <b>&nbsp;&nbsp;:&nbsp;&nbsp;</b>
+                                                                </td>
+                                                                <td align="left" width="64%">${record.expensereportcurrency}</td>
+                                                            </tr>
+                                                             <tr>
+                                                                <td align="left" width="35%">
+                                                                    <p align="left">
+                                                                        <b>Exchange Rate</b>
+                                                                    </p>
+                                                                </td>
+                                                                <td width="1%">
+                                                                    <b>&nbsp;&nbsp;:&nbsp;&nbsp;</b>
+                                                                </td>
+                                                                <td align="left" width="64%">${record.expensereportexchangerate}</td>
+                                                            </tr>
+                                                            <!-- <tr>
+                                                                <td align="left" width="35%">
+                                                                    <p align="left">
+                                                                        <b>Payment Mode</b>
+                                                                    </p>
+                                                                </td>
+                                                                <td width="1%">
+                                                                    <b>&nbsp;&nbsp;:&nbsp;&nbsp;</b>
+                                                                </td>
+                                                                <td align="left" width="64%"></td>
+                                                            </tr> -->
+
+                                                            <tr>
+                                                                <td align="left" width="35%">
+                                                                    <p align="left">
+                                                                        <b>Claim Category</b>
+                                                                    </p>
+                                                                </td>
+                                                                <td width="1%">
+                                                                    <b>&nbsp;&nbsp;:&nbsp;&nbsp;</b>
+                                                                </td>
+                                                                <td align="left" width="64%">${record.custbody_expensereport_category}</td>
+                                                            </tr>
+                                                              <tr>
+                                                                <td align="left" width="35%">
+                                                                    <p align="left">
+                                                                        <b>Total Amount</b>
+                                                                    </p>
+                                                                </td>
+                                                                <td width="1%">
+                                                                    <b>&nbsp;&nbsp;:&nbsp;&nbsp;</b>
+                                                                </td>
+                                                                <td align="left" width="64%">${record.custbody_total_amount_3_decimal}</td>
+                                                            </tr>
+
+                                                        </table>
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                     
       <#if record.expense?has_content>
 	 <table class="footertbl2" id="itemtable" style="width:100%;" width="100%">   
 	                                          <!-- start items -->
@@ -410,8 +410,8 @@
                                                         </td> -->
 
                                                         <td align="right" class="td_top_line td_right_line" colspan="1">
-					<p class="alignC">${expense.amount}</p>
-				</td>
+					                          <p class="alignC">${expense.amount}</p>
+				                                  </td>
                                                         <td align="right" class="td_top_line td_right_line">
                                                             <p class="alignR">${expense.custcol_tax_amount_3_decimal}</p>
                                                         </td>
