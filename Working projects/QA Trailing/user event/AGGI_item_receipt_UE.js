@@ -34,7 +34,7 @@ define(['N/record', 'N/log', 'N/search', 'N/task', 'N/redirect', 'N/ui/serverWid
 
                     label: 'Print', 
 
-                    functionName: 'window.open(\'/app/site/hosting/scriptlet.nl?script=243&deploy=1=' + recId + '&end=true\')'
+                    functionName: 'window.open(\'/app/site/hosting/scriptlet.nl?script=243&deploy=1&recordID=' + recordID + '&end=true\')'
 
                 });
         }
