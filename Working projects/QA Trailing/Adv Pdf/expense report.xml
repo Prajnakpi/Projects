@@ -250,7 +250,7 @@
 
                             </table> -->
 
-                        <table style="width: 100%;">
+                        <!-- <table style="width: 100%;">
 
                                                             <tr>
                                                                                                                      <#if record.subsidiary.mainaddress_text?has_content>
@@ -267,7 +267,7 @@
                                 </tr>
 
                         </table>
- 
+  -->
 
                              <!-- <#if record.subsidiary.internalid?string == '3'>
                         <table style="width: 100%;">
@@ -443,7 +443,7 @@
 		
 		}
                                         </style>
-                                    </head> -->
+                                    </head>
                                      <body header="nlheader" background-macro="watermark" header-height="34%" footer="nlfooter" footer-height="4%" padding="0.25in 0.5in 0.25in 0.5in" size="A4">
       <#if record.expense?has_content>
 	 <table class="footertbl2" id="itemtable" style="width:100%;" width="100%">   
@@ -526,10 +526,10 @@
 	</#list>
 <tr>
                                                 <td colspan="3" align="right" class="td_top_line td_right_line"><b>TOTAL</b></td>
-                                                 <td  align="right" class="td_top_line td_right_line"><b>${claimTotal?string('##,#0.000')}</b></td>
-                                                  <td  align="right" class="td_top_line td_right_line"><b>${taxTotal?string('##,#0.000')}</b></td>
+                                                 <td  align="right" class="td_top_line td_right_line"><b>${claimTotal}</b></td>
+                                                  <td  align="right" class="td_top_line td_right_line"><b>${taxTotal}</b></td>
                                                    <td  align="right" class="td_top_line td_right_line"><b>${totalAmt}</b></td>
-                                                   <td  align="right" class="td_top_line td_right_line"><b>${advanceTotal?string('##,#0.000')}</b></td>
+                                                   <td  align="right" class="td_top_line td_right_line"><b>${advanceTotal}</b></td>
                                                      <td  align="right" class="td_top_line "><b>${netPayableAmt}</b></td>
                                                  </tr>
                                                  <tr>
