@@ -1,118 +1,241 @@
 <?xml version="1.0"?><!DOCTYPE pdf PUBLIC "-//big.faceless.org//report" "report-1.1.dtd">
 <pdf>
-<head>
-<link name="NotoSans" type="font" subtype="truetype" src="${nsfont.NotoSans_Regular}" src-bold="${nsfont.NotoSans_Bold}" src-italic="${nsfont.NotoSans_Italic}" src-bolditalic="${nsfont.NotoSans_BoldItalic}" bytes="2" />
-<#if .locale == "zh_CN">
-<link name="NotoSansCJKsc" type="font" subtype="opentype" src="${nsfont.NotoSansCJKsc_Regular}" src-bold="${nsfont.NotoSansCJKsc_Bold}" bytes="2" />
-<#elseif .locale == "zh_TW">
-<link name="NotoSansCJKtc" type="font" subtype="opentype" src="${nsfont.NotoSansCJKtc_Regular}" src-bold="${nsfont.NotoSansCJKtc_Bold}" bytes="2" />
-<#elseif .locale == "ja_JP">
-<link name="NotoSansCJKjp" type="font" subtype="opentype" src="${nsfont.NotoSansCJKjp_Regular}" src-bold="${nsfont.NotoSansCJKjp_Bold}" bytes="2" />
-<#elseif .locale == "ko_KR">
-<link name="NotoSansCJKkr" type="font" subtype="opentype" src="${nsfont.NotoSansCJKkr_Regular}" src-bold="${nsfont.NotoSansCJKkr_Bold}" bytes="2" />
-<#elseif .locale == "th_TH">
-<link name="NotoSansThai" type="font" subtype="opentype" src="${nsfont.NotoSansThai_Regular}" src-bold="${nsfont.NotoSansThai_Bold}" bytes="2" />
-</#if>
-<macrolist>
-<macro id="nlheader">
+    <head>
+                      <link name="Amiri-font" type="font" subtype="opentype" src="https://7329918.app.netsuite.com/core/media/media.nl?id=12252&amp;c=7329918&amp;h=0UHuNYXd9YR04EmKuSz3PVitE9A7emTU7pB82YEH2SWBNuPR&amp;_xt=.ttf" src-bold="https://7329918.app.netsuite.com/core/media/media.nl?id=12250&amp;c=7329918&amp;h=V_5JR_3nl_jzVCjiM314tG8nCKoOAj_QKzurLf3UQkAA4QOd&amp;_xt=.ttf" bytes="2" />
 
-
- <table class="header" style="width: 100%;">
+      <link name="Amiri-font" type="font" subtype="opentype" src="https://7329918.app.netsuite.com/core/media/media.nl?id=12252&amp;c=7329918&amp;h=0UHuNYXd9YR04EmKuSz3PVitE9A7emTU7pB82YEH2SWBNuPR&amp;_xt=.ttf" src-bold="https://7329918.app.netsuite.com/core/media/media.nl?id=12250&amp;c=7329918&amp;h=V_5JR_3nl_jzVCjiM314tG8nCKoOAj_QKzurLf3UQkAA4QOd&amp;_xt=.ttf" bytes="2" />
+        <link name="NotoSans" type="font" subtype="truetype" src="${nsfont.NotoSans_Regular}" src-bold="${nsfont.NotoSans_Bold}" src-italic="${nsfont.NotoSans_Italic}" src-bolditalic="${nsfont.NotoSans_BoldItalic}" bytes="2" />
+        <#if .locale == "zh_CN">
+            <link name="NotoSansCJKsc" type="font" subtype="opentype" src="${nsfont.NotoSansCJKsc_Regular}" src-bold="${nsfont.NotoSansCJKsc_Bold}" bytes="2" />
+            <#elseif .locale == "zh_TW">
+                <link name="NotoSansCJKtc" type="font" subtype="opentype" src="${nsfont.NotoSansCJKtc_Regular}" src-bold="${nsfont.NotoSansCJKtc_Bold}" bytes="2" />
+                <#elseif .locale == "ja_JP">
+                    <link name="NotoSansCJKjp" type="font" subtype="opentype" src="${nsfont.NotoSansCJKjp_Regular}" src-bold="${nsfont.NotoSansCJKjp_Bold}" bytes="2" />
+                    <#elseif .locale == "ko_KR">
+                        <link name="NotoSansCJKkr" type="font" subtype="opentype" src="${nsfont.NotoSansCJKkr_Regular}" src-bold="${nsfont.NotoSansCJKkr_Bold}" bytes="2" />
+                        <#elseif .locale == "th_TH">
+                            <link name="NotoSansThai" type="font" subtype="opentype" src="${nsfont.NotoSansThai_Regular}" src-bold="${nsfont.NotoSansThai_Bold}" bytes="2" />
+                        </#if>
+                        <macrolist>
+                            <macro id="nlheader">
+                            <table class="header" style="width: 100%;">
                                     <tr>
-
-                                  
-                                        <#if record.subsidiary.internalid?string == '2'>
-
-                                            <td align="left" valign="top" width="100%">
-
-                                                <img src="${subsidiary.logo@url}" style="width:140px;height:160px;position:absolute;padding-top:65px;padding-left:-55px;top:-45px;left:50px;" />
-
+                                        <#if record.subsidiary.internalid?string == '5'>
+                                            <td  align="center" valign="top" width="33%">
+                                                <img src="${subsidiary.logo@url}" style="width:160px;height:50px;position:absolute;top:15px;left:37%; " />
                                             </td>
-
-
 
                                         </#if>
-
-                                        <#if record.subsidiary.internalid?string == '6'>
-
-                                            <td align="left" valign="top" width="100%">
-
-                                                <img src="${subsidiary.logo@url}" style="width:140px;height:160px;position:absolute;padding-top:65px;padding-left:-55px;top:-45px;left:50px;" />
-
+                                        <#if record.subsidiary.internalid?string == '4'>
+                                            <td align="center" valign="top" width="33%">
+                                                <img src="${subsidiary.logo@url}" style="width:160px;height:50px;position:absolute;top:15px;left:37%;" />
                                             </td>
-
-
 
                                         </#if>
-
-                                       <#if record.subsidiary.internalid?string == '5'>
-
-                                            <td align="left" valign="top" width="100%">
-
-                                                <img src="${subsidiary.logo@url}" style="width:190px;height:185px;position:absolute;padding-top:45px;padding-left:-20px;top:-45px;left:-20px;" />
-
+                                        <#if record.subsidiary.internalid?string == '3'>
+                                            <td  align="center" valign="top" width="33%">
+                                                <img src="${subsidiary.logo@url}" style="width:160px;height:50px;position:absolute;top:15px;left:37%;" />
                                             </td>
-
-
 
                                         </#if>
-                                         <#if record.subsidiary.internalid?string == '4'>
-
-                                            <td align="left" valign="top" width="100%">
-
-                                                <img src="${subsidiary.logo@url}" style="width:190px;height:185px;position:absolute;padding-top:45px;padding-left:-10px;top:-45px;left:-10px;" />
-
+                                        <#if record.subsidiary.internalid?string == '1'>
+                                            <td  align="center" valign="top" width="33%">
+                                                <img src="${subsidiary.logo@url}" style="width:160px;height:50px;position:absolute;top:15px;left:37%;" />
                                             </td>
-
-
-
-                                        <!-- </#if>
-                                          <#if record.subsidiary.internalid?string == '4'>
-
-                                            <td align="left" valign="top" width="100%">
-
-                                                <img src="${subsidiary.logo@url}" style="width:200px;height:110px;position:absolute;padding-top:35px;padding-left:-55px;top:-60px;left:50px;" />
-
-                                            </td>
-
-
 
                                         </#if>
-                                         <#if record.subsidiary.internalid?string == '7'>
-
-                                            <td align="left" valign="top" width="100%">
-
-                                                <img src="${subsidiary.logo@url}" style="width:100px;height:110px;position:absolute;padding-top:35px;padding-left:-55px;top:-45px;left:50px;" />
-
-                                            </td>
-
-
-
-                                        </#if> -->
-
-                                    </tr>
-                                    <!-- <tr align="right" valign="top" style="width:120%;top:-40px" >
-                        <td align="right" valign="top" width="33%"><br/><br/>
-                        <b><#if subsidiary.name?has_content> ${subsidiary.name}</#if></b>
-                                <br/>
-                                <span style=" font-size: 9pt;"><#if subsidiary.mainaddress_text?has_content>${subsidiary.mainaddress_text}</#if></span>
-                                <br/>
-                                <span style=" font-size: 9pt;">TRN&nbsp;:&nbsp;<#if subsidiary.federalidnumber?has_content>${subsidiary.federalidnumber}</#if></span>
-                                </td>
-                                <td align="right" valign="top" width="33%">&nbsp;</td>
-                        </tr> -->
+                                         </tr>
                                 </table>
-</macro>
-<!-- <#if (record.status == "Pending Approval") >
-                            <macro id="watermark">
-<div rotate="-45" style="margin-top:400px;margin-left:50px;margin-right:50px;z-index:999;" font-size="20pt" color="#C0C0C0">
-<p>PENDING FOR APPROVAL</p>
-</div>
-</macro>
-</#if> -->
+                                
+                  
+                                 <!-- </head>
+                                    <body header="nlheader" background-macro="watermark" header-height="10%" footer="nlfooter" footer-height="4%" padding="0.25in 0.5in 0.25in 0.5in" size="A4"> -->
+                                 <table width="100%" style="margin-top:80px;">
+                                            <tr>
+                                                <td align="center" class="title">
+                                                    <u>EXPENSE REPORT</u>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                        <table width="100%" border="0.5px solid #000000">
+                                            <tr>
+                                                <td width="50%" border-right="0.5px solid #000000">
+                                                    <table align="right" width="100%">
+                                                        <tr>
+                                                            <td align="left" width="30%">
+                                                                <p align="left">
+                                                                    <b>Payment To</b>
+                                                                </p>
+                                                            </td>
+                                                            <td width="1%">
+                                                                <b>&nbsp;&nbsp;:&nbsp;&nbsp;</b>
+                                                            </td>
+                                                                <td align="left" width="74%">
+                                                                    <b>${record.entity.firstname}&nbsp;${record.entity.lastname}</b>
+                                                                </td>
+                                                                
+                                                            </tr>
+                                                          
+                                                            <tr>
+                                                                <td align="left" width="35%">
+                                                                    <p align="left">
+                                                                        <b>Date</b>
+                                                                    </p>
+                                                                </td>
+                                                                <td width="1%">
+                                                                    <b>&nbsp;&nbsp;:&nbsp;&nbsp;</b>
+                                                                </td>
+                                                                <td align="left" width="64%">${record.trandate}</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td align="left" width="35%">
+                                                                    <p align="left">
+                                                                        <b>Subsidiary</b>
+                                                                    </p>
+                                                                </td>
+                                                                <td width="1%">
+                                                                    <b>&nbsp;&nbsp;:&nbsp;&nbsp;</b>
+                                                                </td>
+                                                                <td align="left" width="64%">
+                                                                    <p align="left" style="text-decoration:none;">
+                                ${record.subsidiary}
+                                                                    </p>
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td align="left" width="35%">
+                                                                    <p align="left">
+                                                                        <b>CR No.</b>
+                                                                    </p>
+                                                                </td>
+                                                                <td width="1%">
+                                                                    <b>&nbsp;&nbsp;:&nbsp;&nbsp;</b>
+                                                                </td>
+                                                                <td align="left" width="64%">${subsidiary.custrecord_cr_no}<br/>
+                                                                
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                             <td align="left" width="35%">
+                                                                    <p align="left">
+                                                                        <b>Tax Card No</b>
+                                                                    </p>
+                                                                </td>
+                                                                <td width="1%">
+                                                                    <b>&nbsp;&nbsp;:&nbsp;&nbsp;</b>
+                                                                </td>
+                                                                <td align="left" width="64%">
+                                                                    <p align="left" style="text-decoration:none;">${subsidiary.custrecord_tax_card_no}</p>
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                             <td align="left" width="35%">
+                                                                    <p align="left">
+                                                                        <b>Address</b>
+                                                                    </p>
+                                                                </td>
+                                                                <td width="1%">
+                                                                    <b>&nbsp;&nbsp;:&nbsp;&nbsp;</b>
+                                                                </td>
+                                                                <td align="left" width="64%">
+                                                                    <p align="left" style="text-decoration:none;">${subsidiary.mainaddress_text}</p>
+                                                                </td>
+                                                            </tr>
+                                                             <tr>
+                                                             <td align="left" width="35%">
+                                                                    <p align="left">
+                                                                        <b>Phone No</b>
+                                                                    </p>
+                                                                </td>
+                                                                <td width="1%">
+                                                                    <b>&nbsp;&nbsp;:&nbsp;&nbsp;</b>
+                                                                </td>
+                                                                <td align="left" width="64%">
+                                                                    <p align="left" style="text-decoration:none;">${subsidiary.addrphone}</p>
+                                                                </td>
+                                                            </tr>
+                                                        </table>
+                                                    </td>
+                                                    <td width="50%">
+                                                        <table width="100%">
+                                                            <tr>
+                                                                <td align="left" width="35%">
+                                                                    <p align="left">
+                                                                        <b>EXP.Rept#</b>
+                                                                    </p>
+                                                                </td>
+                                                                <td width="1%">
+                                                                    <b>&nbsp;&nbsp;:&nbsp;&nbsp;</b>
+                                                                </td>
+                                                                <td align="left" width="64%"><b>${record.tranid}</b></td>
+                                                            </tr>
 
-                            <!-- <macro id="nlfooter">
-                                <table style="width: 100%;">
+                                                            <tr>
+                                                                <td align="left" width="35%">
+                                                                    <p align="left">
+                                                                        <b>Currency</b>
+                                                                    </p>
+                                                                </td>
+                                                                <td width="1%">
+                                                                    <b>&nbsp;&nbsp;:&nbsp;&nbsp;</b>
+                                                                </td>
+                                                                <td align="left" width="64%">${record.expensereportcurrency}</td>
+                                                            </tr>
+                                                             <tr>
+                                                                <td align="left" width="35%">
+                                                                    <p align="left">
+                                                                        <b>Exchange Rate</b>
+                                                                    </p>
+                                                                </td>
+                                                                <td width="1%">
+                                                                    <b>&nbsp;&nbsp;:&nbsp;&nbsp;</b>
+                                                                </td>
+                                                                <td align="left" width="64%">${record.expensereportexchangerate}</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td align="left" width="35%">
+                                                                    <p align="left">
+                                                                        <b>Payment Mode</b>
+                                                                    </p>
+                                                                </td>
+                                                                <td width="1%">
+                                                                    <b>&nbsp;&nbsp;:&nbsp;&nbsp;</b>
+                                                                </td>
+                                                                <td align="left" width="64%">${record.custbody_payment_mode}</td>
+                                                            </tr>
+
+                                                            <tr>
+                                                                <td align="left" width="35%">
+                                                                    <p align="left">
+                                                                        <b>Claim Category</b>
+                                                                    </p>
+                                                                </td>
+                                                                <td width="1%">
+                                                                    <b>&nbsp;&nbsp;:&nbsp;&nbsp;</b>
+                                                                </td>
+                                                                <td align="left" width="64%">${record.custbody_expensereport_category}</td>
+                                                            </tr>
+                                                              <tr>
+                                                                <td align="left" width="35%">
+                                                                    <p align="left">
+                                                                        <b>Total Amount</b>
+                                                                    </p>
+                                                                </td>
+                                                                <td width="1%">
+                                                                    <b>&nbsp;&nbsp;:&nbsp;&nbsp;</b>
+                                                                </td>
+                                                                <td align="left" width="64%">${record.custbody_total_amount_3_decimal}</td>
+                                                            </tr>
+
+                                                        </table>
+                                                    </td>
+                                                </tr>
+                                            </table>
+
+                            </macro> 
+
+                            <macro id="nlfooter">
+                                <!-- <table style="width: 100%;">
                                     <tr>
                                         <td align="left" style="width:60%;">
                                             <p class="alignL" style="font-size:11px;font-style:italics;color:#A9A9A9">*This is a system-generated document. No signature is required.</p>
@@ -125,9 +248,51 @@
 
 
 
-                            </table>
-                        </macro> -->
-                    </macrolist>
+                            </table> -->
+
+                        <table style="width: 100%;">
+
+                                                            <tr>
+                                                                                                                     <#if record.subsidiary.mainaddress_text?has_content>
+                                        <td align="left" style="width:50%;font-size:9px">${subsidiary.mainaddress_text}</td>
+                                       
+                                                            </#if>  
+                                                               <#if record.subsidiary.custrecord_arabic_address?has_content>
+
+                                     <td style="width:50%;" align="right">
+
+                                        <p class="fontA" align="right">${record.subsidiary.custrecord_arabic_address}<br/></p>
+                                         </td>
+                                                                </#if>
+                                </tr>
+
+                        </table>
+ 
+
+                             <!-- <#if record.subsidiary.internalid?string == '3'>
+                        <table style="width: 100%;">
+
+                                                            <tr>
+                                        <td align="left" style="width:50%;font-size:9px"> 
+                                        PO Box: 2185, Postal Code: 130<br/>
+                                        Way No: 98, Building No: 260, Flat No: 302, Al Jinain Street<br/>
+                                        Qurayyat, Sultanate of Oman.<br/>
+                                        Tel : +968 22850997,  CR: 1214737, Tax card: 8078231
+                                        </td>
+
+                                        <td style="width:40%;font-family: Amiri-font, sans-serif;font-size:9px;text-align:right;margin-top:-7px;" align="right"><p >ص ب :2185  , الرمز البريدي :130  </p><p style='margin-top:3px'>      
+                                رقم السكة: 98 , بناية رقم: 260 , شقة رقم: 302  شارع الجنين </p> <p style='margin-top:3px'>
+                                        قريات, ســــــلطنة عــــــمان </p> <p style='margin-top:3px'>
+                                        هاتف: 96822850997+ س ت :1214737 البطاقة الضريبية: 8078231   </p>                          
+                                        </td>
+
+
+                                </tr>
+
+                        </table>
+                        </#if> -->
+                         </macro>
+                    </macrolist> 
                     <style type="text/css">span, table {
                         <#if .locale=="zh_CN">font-family: stsong, sans-serif;
                             <#elseif .locale=="zh_TW">font-family: msung, sans-serif;
@@ -167,6 +332,11 @@
 		font-size: 8.5pt !important;
 		border: 0.5px solid #000000
 		}
+               .fontA{
+                      font-family: Amiri-font, sans-serif;
+                  font-size:9px;
+                  dir:rtl;
+                    }
 		table.total {
 		page-break-inside: avoid;
 		}
@@ -273,206 +443,25 @@
 		
 		}
                                         </style>
-                                    </head>
-                                    <body header="nlheader" background-macro="watermark" header-height="10%" footer="nlfooter" footer-height="4%" padding="0.25in 0.5in 0.25in 0.5in" size="A4">
-<table style="width:100%">
-            <tr><td align="center" class="title">
-                                                    <u>EXPENSE REPORT</u>
-                                                </td></tr>
-    </table>
-
-    <table width="100%" border="0.5px solid #000000">
-                                            <tr>
-                                                <td width="50%" border-right="0.5px solid #000000">
-                                                    <table align="right" width="100%">
-                                                        <tr>
-                                                            <td align="left" width="30%">
-                                                                <p align="left">
-                                                                    <b>Payment To</b>
-                                                                </p>
-                                                            </td>
-                                                            <td width="1%">
-                                                                <b>&nbsp;&nbsp;:&nbsp;&nbsp;</b>
-                                                            </td>
-                                                                <td align="left" width="74%">
-                                                                    <b>${record.entity.firstname}&nbsp;${record.entity.lastname}</b>
-                                                                </td>
-                                                                
-                                                            </tr>
-                                                          
-                                                            <tr>
-                                                                <td align="left" width="35%">
-                                                                    <p align="left">
-                                                                        <b>Date</b>
-                                                                    </p>
-                                                                </td>
-                                                                <td width="1%">
-                                                                    <b>&nbsp;&nbsp;:&nbsp;&nbsp;</b>
-                                                                </td>
-                                                                <td align="left" width="64%">${record.trandate}</td>
-                                                            </tr>
-                                                            <tr>
-                                                                <td align="left" width="35%">
-                                                                    <p align="left">
-                                                                        <b>Subsidiary</b>
-                                                                    </p>
-                                                                </td>
-                                                                <td width="1%">
-                                                                    <b>&nbsp;&nbsp;:&nbsp;&nbsp;</b>
-                                                                </td>
-                                                                <td align="left" width="64%">
-                                                                    <p align="left" style="text-decoration:none;">
-                                                                    ${record.subsidiary}
-                                                                    </p>
-                                                                </td>
-                                                            </tr>
-                                                            <tr>
-                                                                <td align="left" width="35%">
-                                                                    <p align="left">
-                                                                        <b>CR No.</b>
-                                                                    </p>
-                                                                </td>
-                                                                <td width="1%">
-                                                                    <b>&nbsp;&nbsp;:&nbsp;&nbsp;</b>
-                                                                </td>
-                                                                <td align="left" width="64%">${subsidiary.custrecord_cr_no}<br/>
-                                                                
-                                                                </td>
-                                                            </tr>
-                                                            <tr>
-                                                             <td align="left" width="35%">
-                                                                    <p align="left">
-                                                                        <b>Tax Card No</b>
-                                                                    </p>
-                                                                </td>
-                                                                <td width="1%">
-                                                                    <b>&nbsp;&nbsp;:&nbsp;&nbsp;</b>
-                                                                </td>
-                                                                <td align="left" width="64%">
-                                                                    <p align="left" style="text-decoration:none;">${subsidiary.custrecord_tax_card_no}</p>
-                                                                </td>
-                                                            </tr>
-                                                            <tr>
-                                                             <td align="left" width="35%">
-                                                                    <p align="left">
-                                                                        <b>Address</b>
-                                                                    </p>
-                                                                </td>
-                                                                <td width="1%">
-                                                                    <b>&nbsp;&nbsp;:&nbsp;&nbsp;</b>
-                                                                </td>
-                                                                <td align="left" width="64%">
-                                                                    <p align="left" style="text-decoration:none;">${subsidiary.mainaddress_text}</p>
-                                                                </td>
-                                                            </tr>
-                                                             <tr>
-                                                             <td align="left" width="35%">
-                                                                    <p align="left">
-                                                                        <b>Phone No</b>
-                                                                    </p>
-                                                                </td>
-                                                                <td width="1%">
-                                                                    <b>&nbsp;&nbsp;:&nbsp;&nbsp;</b>
-                                                                </td>
-                                                                <td align="left" width="64%">
-                                                                    <p align="left" style="text-decoration:none;">${subsidiary.addrphone}</p>
-                                                                </td>
-                                                            </tr>
-                                                        </table>
-                                                     </td>
-                                                    <td width="50%">
-                                                        <table width="100%">
-                                                            <tr>
-                                                                <td align="left" width="35%">
-                                                                    <p align="left">
-                                                                        <b>EXP.Rept#</b>
-                                                                    </p>
-                                                                </td>
-                                                                <td width="1%">
-                                                                    <b>&nbsp;&nbsp;:&nbsp;&nbsp;</b>
-                                                                </td>
-                                                                <td align="left" width="64%"><b>${record.tranid}</b></td>
-                                                            </tr>
-
-                                                            <tr>
-                                                                <td align="left" width="35%">
-                                                                    <p align="left">
-                                                                        <b>Currency</b>
-                                                                    </p>
-                                                                </td>
-                                                                <td width="1%">
-                                                                    <b>&nbsp;&nbsp;:&nbsp;&nbsp;</b>
-                                                                </td>
-                                                                <td align="left" width="64%">${record.expensereportcurrency}</td>
-                                                            </tr>
-                                                             <tr>
-                                                                <td align="left" width="35%">
-                                                                    <p align="left">
-                                                                        <b>Exchange Rate</b>
-                                                                    </p>
-                                                                </td>
-                                                                <td width="1%">
-                                                                    <b>&nbsp;&nbsp;:&nbsp;&nbsp;</b>
-                                                                </td>
-                                                                <td align="left" width="64%">${record.expensereportexchangerate}</td>
-                                                            </tr>
-                                                            <tr>
-                                                                <td align="left" width="35%">
-                                                                    <p align="left">
-                                                                        <b>Payment Mode</b>
-                                                                    </p>
-                                                                </td>
-                                                                <td width="1%">
-                                                                    <b>&nbsp;&nbsp;:&nbsp;&nbsp;</b>
-                                                                </td>
-                                                                <td align="left" width="64%">${record.custbody_payment_mode}</td>
-                                                            </tr>
-
-                                                            <tr>
-                                                                <td align="left" width="35%">
-                                                                    <p align="left">
-                                                                        <b>Claim Category</b>
-                                                                    </p>
-                                                                </td>
-                                                                <td width="1%">
-                                                                    <b>&nbsp;&nbsp;:&nbsp;&nbsp;</b>
-                                                                </td>
-                                                                <td align="left" width="64%">${record.custbody_expensereport_category}</td>
-                                                            </tr>
-                                                              <tr>
-                                                                <td align="left" width="35%">
-                                                                    <p align="left">
-                                                                        <b>Total Amount</b>
-                                                                    </p>
-                                                                </td>
-                                                                <td width="1%">
-                                                                    <b>&nbsp;&nbsp;:&nbsp;&nbsp;</b>
-                                                                </td>
-                                                                <td align="left" width="64%">${record.custbody_total_amount_3_decimal}</td>
-                                                            </tr>
-
-                                                        </table>
-                                                    </td>
-                                                </tr>
-                                            </table> 
-
- <#if record.expense?has_content>
+                                    </head> -->
+                                     <body header="nlheader" background-macro="watermark" header-height="34%" footer="nlfooter" footer-height="4%" padding="0.25in 0.5in 0.25in 0.5in" size="A4">
+      <#if record.expense?has_content>
 	 <table class="footertbl2" id="itemtable" style="width:100%;" width="100%">   
-	                                           
+	                                          <!-- start items -->
 <thead>
 <tr style="padding-bottom: 0px;">
-                                                    <th align="left" width="9%" class="td_right_line">
+                                                    <th align="left" width="12%" class="td_right_line">
                                                         <p align="left">
                                                             <b>Date</b>
                                                         </p>
                                                     </th>
-                                                    <th align="left" class="td_right_line" width="10%">
+                                                    <th align="left" class="td_right_line" width="25%">
                                                         <p class="alignL">Description</p>
                                                     </th>
-                                                    <th align="center" class="td_right_line" width="8%">
+                                                    <th align="center" class="td_right_line" width="9%">
                                                         <p>Currency</p>
                                                     </th>
-                                                     <th align="center" class="td_right_line" width="9%">Date</th> 
+                                                    <!-- <th align="center" class="td_right_line" width="12%">Date</th> -->
                                                   
                                                     <th align="right" class="td_right_line" width="12%">
                                                         <p class="alignR">Claim Amount</p>
@@ -508,9 +497,9 @@
                                                         <td align="center" class="td_top_line td_right_line">
                                                             <p class="alignC">${expense.currency}</p>
                                                         </td>
-                                                        <td align="center" class="td_top_line td_right_line">
+                                                        <!-- <td align="center" class="td_top_line td_right_line">
                                                             <p class="alignC">${expense.expensedate}</p>
-                                                        </td>
+                                                        </td> -->
 
                                                         <td align="right" class="td_top_line td_right_line" colspan="1">
 					<p class="alignC">${expense.amount}</p>
@@ -524,7 +513,7 @@
                                                         <td align="right" class="td_top_line td_right_line">
                                                             <p class="alignR">0</p>
                                                         </td>
-                                                        <td align="right" class="td_top_line  ">
+                                                        <td align="right" class="td_top_line ">
                                                             <p class="alignR">${expense.custcol_gross_amount_3_decimal}
                                                                 </p>
 </td>
@@ -537,18 +526,18 @@
 	</#list>
 <tr>
                                                 <td colspan="3" align="right" class="td_top_line td_right_line"><b>TOTAL</b></td>
-                                                <td align="right" class="td_top_line td_right_line"></td>
-                                                 <td  align="right" class="td_top_line td_right_line"><b>${claimTotal}</b></td>
-                                                  <td  align="right" class="td_top_line td_right_line"><b>${taxTotal}</b></td>
+                                                 <td  align="right" class="td_top_line td_right_line"><b>${claimTotal?string('##,#0.000')}</b></td>
+                                                  <td  align="right" class="td_top_line td_right_line"><b>${taxTotal?string('##,#0.000')}</b></td>
                                                    <td  align="right" class="td_top_line td_right_line"><b>${totalAmt}</b></td>
-                                                   <td  align="right" class="td_top_line td_right_line"><b>${advanceTotal}</b></td>
-                                                     <td  align="right" class="td_top_line"><b>${netPayableAmt}</b></td>
+                                                   <td  align="right" class="td_top_line td_right_line"><b>${advanceTotal?string('##,#0.000')}</b></td>
+                                                     <td  align="right" class="td_top_line "><b>${netPayableAmt}</b></td>
                                                  </tr>
                                                  <tr>
-                                                  <td colspan="9" align="left" class="td_top_line"><b>Amount in words&nbsp;:&nbsp;${record.expensereportcurrency}&nbsp;${record.custbody_amount_in_words_decimal}</b></td>
+                                                  <td colspan="8" align="left" class="td_top_line"><b>Amount in words&nbsp;:&nbsp;${record.expensereportcurrency}&nbsp;${record.custbody_amount_in_words_decimal}</b></td>
                                    </tr>
 											</table>                         
    </#if>   
+
 <table style="width:100%;">
  <tr style="width:100%;padding-top: 50px;">
 
@@ -646,11 +635,7 @@
                                                                                             </td>
                                                                                         </tr>
                                                                                     </table>
+                                                                                    
 
-
-
-
-
-   
-</body>
-</pdf>
+                                                                                </body>
+                                                                            </pdf>
