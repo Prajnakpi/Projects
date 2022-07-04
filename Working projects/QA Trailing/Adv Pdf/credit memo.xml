@@ -15,10 +15,7 @@
 </#if>
 <macrolist>
 <macro id="nlheader">
-
-
- 
-                                <table style="width:100%">
+<table style="width:100%">
             <tr><td align="center" class="title">
                                                     <u>TAX CREDIT NOTE</u>
                                                 </td></tr>
