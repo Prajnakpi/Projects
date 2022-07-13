@@ -1,0 +1,521 @@
+<?xml version="1.0"?><!DOCTYPE pdf PUBLIC "-//big.faceless.org//report" "report-1.1.dtd">
+<pdf>
+    <head>
+        <link name="NotoSans" type="font" subtype="truetype" src="${nsfont.NotoSans_Regular}" src-bold="${nsfont.NotoSans_Bold}" src-italic="${nsfont.NotoSans_Italic}" src-bolditalic="${nsfont.NotoSans_BoldItalic}" bytes="2" />
+        <#if .locale == "zh_CN">
+            <link name="NotoSansCJKsc" type="font" subtype="opentype" src="${nsfont.NotoSansCJKsc_Regular}" src-bold="${nsfont.NotoSansCJKsc_Bold}" bytes="2" />
+            <#elseif .locale == "zh_TW">
+                <link name="NotoSansCJKtc" type="font" subtype="opentype" src="${nsfont.NotoSansCJKtc_Regular}" src-bold="${nsfont.NotoSansCJKtc_Bold}" bytes="2" />
+                <#elseif .locale == "ja_JP">
+                    <link name="NotoSansCJKjp" type="font" subtype="opentype" src="${nsfont.NotoSansCJKjp_Regular}" src-bold="${nsfont.NotoSansCJKjp_Bold}" bytes="2" />
+                    <#elseif .locale == "ko_KR">
+                        <link name="NotoSansCJKkr" type="font" subtype="opentype" src="${nsfont.NotoSansCJKkr_Regular}" src-bold="${nsfont.NotoSansCJKkr_Bold}" bytes="2" />
+                        <#elseif .locale == "th_TH">
+                            <link name="NotoSansThai" type="font" subtype="opentype" src="${nsfont.NotoSansThai_Regular}" src-bold="${nsfont.NotoSansThai_Bold}" bytes="2" />
+                        </#if>
+                        <macrolist>
+                            <macro id="nlheader">
+                            <!-- <table class="header" style="width: 100%;">
+                                    <tr>
+                                        <#if record.subsidiary.internalid?string == '5'>
+                                            <td align="center" valign="top" width="33%">
+                                                <img src="${subsidiary.logo@url}" style="width:160px;height:50px;position:absolute;top:15px;left:39%;" />
+                                            </td>
+
+                                        </#if>
+                                        <#if record.subsidiary.internalid?string == '4'>
+                                            <td align="center" valign="top" width="33%">
+                                                <img src="${subsidiary.logo@url}" style="width:160px;height:50px;position:absolute;top:15px;left:39%;" />
+                                            </td>
+
+                                        </#if>
+                                        <#if record.subsidiary.internalid?string == '3'>
+                                            <td align="center" valign="top" width="33%">
+                                                <img src="${subsidiary.logo@url}" style="width:160px;height:50px;position:absolute;top:15px;left:38%;" />
+                                            </td>
+
+                                        </#if>
+                                        <#if record.subsidiary.internalid?string == '1'>
+                                            <td align="center" valign="top" width="33%">
+                                                <img src="${subsidiary.logo@url}" style="width:160px;height:50px;position:absolute;top:15px;left:39%;" />
+                                            </td>
+
+                                        </#if>
+                                         </tr> -->
+                                        
+<table class="header" style="width: 100%;">
+
+<tr>
+                                        <#if record.subsidiary.internalid?string == '2'>
+
+                                            <td align="left" valign="top" width="100%">
+
+                                                <img src="${subsidiary.logo@url}" style="width:140px;height:160px;position:absolute;padding-top:65px;padding-left:-55px;top:-45px;left:50px;" />
+
+                                            </td>
+
+
+
+                                        </#if>
+
+                                        <#if record.subsidiary.internalid?string == '6'>
+
+                                            <td align="left" valign="top" width="100%">
+
+                                                <img src="${subsidiary.logo@url}" style="width:140px;height:160px;position:absolute;padding-top:65px;padding-left:-55px;top:-45px;left:50px;" />
+
+                                            </td>
+
+
+
+                                        </#if>
+
+                                       <#if record.subsidiary.internalid?string == '5'>
+
+                                            <td align="left" valign="top" width="100%">
+
+                                                <img src="${subsidiary.logo@url}" style="width:190px;height:185px;position:absolute;padding-top:45px;padding-left:-20px;top:-45px;left:-20px;" />
+
+                                            </td>
+
+
+
+                                        </#if>
+                                         <#if record.subsidiary.internalid?string == '4'>
+
+                                            <td align="left" valign="top" width="100%">
+
+                                                <img src="${subsidiary.logo@url}" style="width:190px;height:185px;position:absolute;padding-top:45px;padding-left:-10px;top:-45px;left:-10px;" />
+
+                                            </td>
+
+
+
+                                        <!-- </#if>
+                                          <#if record.subsidiary.internalid?string == '4'>
+
+                                            <td align="left" valign="top" width="100%">
+
+                                                <img src="${subsidiary.logo@url}" style="width:200px;height:110px;position:absolute;padding-top:35px;padding-left:-55px;top:-60px;left:50px;" />
+
+                                            </td>
+
+
+
+                                        </#if>
+                                         <#if record.subsidiary.internalid?string == '7'>
+
+                                            <td align="left" valign="top" width="100%">
+
+                                                <img src="${subsidiary.logo@url}" style="width:100px;height:110px;position:absolute;padding-top:35px;padding-left:-55px;top:-45px;left:50px;" />
+
+                                            </td>
+
+
+
+                                        </#if> -->
+
+                                        <!-- <#if record.subsidiary.internalid?string == '3'>
+
+                                            <td align="left" valign="top" width="33%">
+
+                                                <img src="${subsidiary.logo@url}" style="width:150px;height:110px;position:absolute;top:-6px;padding-top:25px;" />
+
+                                            </td>
+
+
+
+                                        </#if> -->
+
+                                        <!-- <#if record.subsidiary.internalid?string == '6'>
+
+                                            <td align="left" valign="top" width="33%">
+
+                                                <img src="${subsidiary.logo@url}" style="width:150px;height:60px;position:absolute;top:-6px;padding-top:0px;padding-left:-5px;" />
+
+                                            </td>
+
+
+
+                                        </#if> -->
+ 
+</tr>
+
+
+<tr align="right" valign="top" style="width:120%;top:-40px" >
+                        <td align="right" valign="top" width="33%"><br/><br/>
+                        <b><#if subsidiary.name?has_content> ${subsidiary.name}</#if></b>
+                                <br/>
+                                <span style=" font-size: 9pt;"><#if subsidiary.mainaddress_text?has_content>${subsidiary.mainaddress_text}</#if></span>
+                                <br/>
+                                <span style=" font-size: 9pt;">TRN&nbsp;:&nbsp;<#if subsidiary.federalidnumber?has_content>${subsidiary.federalidnumber}</#if></span>
+                                </td>
+                                <td align="right" valign="top" width="33%">&nbsp;</td>
+                        </tr>
+</table>
+
+
+
+
+                                
+
+                            </macro>
+                            <macro id="footer">
+                                <table class="footer" style="width: 100%;">
+                                    <tr>
+                                        <td align="right">(Page <pagenumber/>
+ of <totalpages/>
+)</td>
+                                </tr>
+                                <tr>
+                                    <td align="center" style="margin-top:10px;color:#bab5b5;font-style: italic;">*This is a computer-generated journal entry and does not need a signature.</td>
+                                </tr>
+                            </table>
+                        </macro>
+                    </macrolist>
+                    <style type="text/css">span, table {
+                        <#if .locale=="zh_CN">font-family: stsong, sans-serif;
+                            <#elseif .locale=="zh_TW">font-family: msung, sans-serif;
+                                <#elseif .locale=="ja_JP">font-family: heiseimin, sans-serif;
+                                    <#elseif .locale=="ko_KR">font-family: hygothic, sans-serif;
+                                        <#elseif .locale=="ru_RU">font-family: verdana;
+                                            <#else>font-family: sans-serif;
+                                            </#if>font-size: 9pt;
+                table-layout: fixed;
+            }
+      table {
+        font-size: 9pt;
+        table-layout: fixed;
+      }
+            th {
+                font-weight: bold;
+                vertical-align: middle;
+                padding: 5px 6px 3px;
+                color: #333333;
+            }
+            td {
+                padding: 4px 6px;
+            }
+      td p { align:left }
+            b {
+                font-weight: bold;
+                color: #333333;
+            }
+            table.header td {
+                padding: 0;
+                font-size: 10pt;
+            }
+            table.footer td {
+                padding: 0;
+                font-size: 8pt;
+            }
+            table.itemtable th{
+                padding-bottom: 10px;
+                padding-top: 10px;
+            }
+            .td_left_line{
+             border-left :0.5px solid #000000;
+                 }
+                .td_right_line{
+             border-right :0.5px solid #000000;
+                 }
+                 .td_top_line{
+             border-top :0.5px solid #000000;
+                 }
+                 .td_bottom_line{
+             border-bottom :0.5px solid #000000;
+                 }
+            table.body td {
+                padding-top: 2px;
+            }
+            table.total {
+                page-break-inside: avoid;
+            }
+            tr.totalrow {
+                background-color: #e3e3e3;
+                line-height: 200%;
+            }
+            td.totalboxtop {
+                font-size: 12pt;
+                background-color: #e3e3e3;
+            }
+            td.addressheader {
+                font-size: 8pt;
+                padding-top: 6px;
+                padding-bottom: 2px;
+            }
+            td.address {
+                padding-top: 0;
+            }
+            td.totalboxmid {
+                font-size: 28pt;
+                padding-top: 20px;
+                background-color: #e3e3e3;
+            }
+            span.title {
+                font-size: 28pt;
+            }
+            span.number {
+                font-size: 16pt;
+            }
+            hr {
+                width: 100%;
+                color: #d3d3d3;
+                background-color: #d3d3d3;
+                height: 1px;
+            }
+                                        </style>
+                                    </head>
+                                    <body footer="footer" header="nlheader" footer-height="3%" header-height="15%" padding="0.25in 0.25in 0.25in 0.25in" size="A4">
+                                        <h2 align="center" style="font-weight:bold;font-size:18px;font-family:verdana,geneva,sans-serif;"> INTERCOMPANY JOURNAL ENTRY</h2>
+
+                                        <table width="100%" border="0.5px solid #000000" style="margin-top:5px">
+                                            <tr>
+                                                <th width="15%" class="td_bottom_line td_right_line">
+GL Date
+                                                </th>
+                                                
+                                                <th width="20%" class="td_bottom_line td_right_line">
+Journal Entry No
+                                                </th>
+                                                <th width="18%" class="td_bottom_line td_right_line">
+Currency
+                                                </th>
+                                                <th width="29%" class="td_bottom_line  td_right_line">
+Subsidiary
+                                                </th>
+                                              <th width="18%" class="td_bottom_line">
+Exchange Rate
+                                                </th>
+
+
+                                            </tr>
+                                            <tr>
+               
+                                                <td class="td_right_line" width="20%">
+                                                    <b>
+${record.trandate?string("dd-MMM-YYYY")}
+                                                    </b>
+                                                </td>
+                                                <td width="20%" class="td_right_line">
+                                                    <b>
+${record.tranid}
+                                                    </b>
+                                                </td>
+                                                <td width="20%" class="td_right_line">
+                                                    <b>
+${record.currency}
+                                                    </b>
+                                                </td>
+                                                <td width="20%" class="td_right_line">
+                                                    <b>
+${record.subsidiary}
+                                                    </b>
+                                                </td>
+                                                 <td width="20%" class="">
+                                                    <b>
+                                                     <#if record.exchangerate?has_content>
+${record.exchangerate?string["#,##0.00"]}
+    </#if>
+                                                    </b>
+                                                </td>
+
+                                            </tr>
+                                        </table>
+<#if record.line?has_content>
+<table border=".5px solid #000" style="margin-top :10px;" width="100%">
+<#assign SrNo=0>
+<#assign debitSum = 0>
+<#assign debittotalSum = 0>
+<#assign creditSum = 0>
+<#assign grosstotalsum = 0>
+<#assign taxamt=0>
+<#list record.line as item>
+<#assign debitSum=debitSum + item.debit/>
+<#assign creditSum=creditSum + item.credit/>
+ <#assign grosstotalsum=grosstotalsum + item.grossamt/>
+<#assign taxamt=taxamt + item.tax1amt/>
+<#assign debittotalSum=debitSum +taxamt/>
+
+
+
+<#if item_index==0>
+<tr>
+<th class="td_bottom_line td_right_line  " align="right" width="7%">SL#</th>
+<th class="td_bottom_line td_right_line  " align="left" width="20%">Account</th>
+<th class="td_bottom_line td_right_line  " align="left" width="18%">
+    <p class="alignL">Name</p>
+</th>
+
+<th align="left" class="td_bottom_line td_right_line " width="20%">Description</th>
+
+<th class="td_bottom_line td_right_line " align="right" width="17%">
+    <p class="alignL">Debit </p>
+</th>
+<th class="td_bottom_line td_right_line  " align="right" width="18%">
+    <p class="alignL">Credit</p>
+</th>
+
+</tr>
+</#if>
+        <tr >
+<td align="center" class="td_bottom_line td_right_line">${item_index + 1}</td>
+        <td align="left" class="td_bottom_line td_right_line">
+        <p align="left">
+ ${item.account}</p>
+<!-- 
+            <#assign containsValue =  item.account?contains(":")/>
+                    <#assign containsValue =  containsValue?string('true','false')/>
+
+                <#if containsValue?string=="true" >
+                    <#assign num =  item.account?split(":")/>
+                    <#assign num =  num[0]?split(" ")/>
+                    <#assign num1 =  item.account?substring(item.account?index_of(":")+1)/>
+                    ${num[0]}${num1?substring(num1?index_of(":")+1)}
+                <#else>
+                    <#assign num =  item.account?substring(item.account?index_of(":")+1)/>
+                    ${num?substring(num?index_of(":")+1)}
+                </#if>
+          -->
+                </td>
+                <td align="right" class="td_bottom_line td_right_line" >      
+ 
+<p align="left">
+ ${item.entity}</p>
+ 
+      </td> 
+                              
+<td align="left" class="td_bottom_line td_right_line">      
+ 
+<p align="left">
+ ${item.memo}</p>
+ 
+      </td>                              
+    <td align="right" class="td_bottom_line td_right_line">
+        <p class="alignR">
+            <#if item.debit!=0>
+${item.debit?string["#,##0.00"]}
+</#if></p></td>
+<td align="right" class="td_bottom_line td_right_line ">
+                                                    <p class="alignR">
+    <#if item.credit!=0>
+${item.credit?string["#,##0.00"]}
+</#if></p></td>
+   
+     
+
+ 
+
+</tr>
+
+        </#list>
+        <tr>
+
+<td align="right" colspan="4"  class="td_right_line  " style="font-weight: bold;margin-left;border-bottom:1px solid black;">VAT</td>
+
+     
+
+    <td align="right" class=" td_right_line " style="border-bottom:1px;">
+           <p class="alignR"><b>${taxamt}</b>
+       </p>
+     </td>
+     <td align="right" class=" td_right_line " style="border-bottom:1px;" >
+          <p class="alignR"> <b></b>
+             </p>
+     </td> 
+ <td align="right" class=" td_right_line " style="border-bottom:1px;" >
+    
+</td> 
+ <td align="right" class=" td_right_line " style="border-bottom:1px;">
+     
+</td> 
+ <td align="right" style="border-bottom:1px;">
+     <p class="alignR"> <b></b>
+ </p>
+</td> 
+
+                                       
+</tr>
+ <tr>
+
+<td align="right" colspan="4"  class="td_right_line  " style="font-weight: bold;margin-left:">TOTAL</td>
+
+     
+
+    <td align="right" class=" td_right_line ">
+           <p class="alignR"><b>${creditSum}</b>
+       </p>
+     </td>
+     <td align="right" class=" td_right_line " >
+          <p class="alignR"> <b>${creditSum}</b>
+             </p>
+     </td> 
+ <td align="right" class=" td_right_line " >
+    
+</td> 
+ <td align="right" class=" td_right_line ">
+     
+</td> 
+ <td align="right">
+     <p class="alignR"> <b></b>
+ </p>
+</td> 
+
+                                       
+</tr>
+ </table>
+ </#if>
+
+
+
+
+
+<table style="width:100%;">
+ <tr style="width:100%;padding-top: 50px;">
+
+
+                                <td align="left">
+                                    <table align="left">
+                                    <tr>
+                                            <td align="center">
+                                            ${record.custbody_created_by} 
+
+                                          
+
+
+                                            </td>
+                                        </tr>
+
+                                        <tr>
+                                            <td align="center" style="margin-top:-13px;">___________________</td>
+                                        </tr>
+    
+
+                                        <tr>
+                                            <td align="center">
+                                                <b>Created By</b>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </td>
+                                <td align="right" >
+                                    <table align="right">
+                                      <tr>
+                                            <td align="center">${record.custbody_kpi_first_approve_reject}</td>
+                                        </tr>
+                                         <tr>
+                                            <td align="center" style="margin-top:-13px;">___________________</td>
+                                        </tr>
+
+                                        <tr>
+                                            <td align="center">
+                                                <b>Approved By</b>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </td>
+                            </tr>
+                        </table>
+
+                                </body>
+                            </pdf>

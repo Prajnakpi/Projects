@@ -8,7 +8,7 @@
  * Includes rentFieldChangedAction
  *
  * Version    Date            Author        Remarks
- * 2.0.0      8 Aug 2021   Sanath       Created for RECRUITMENT Job Post
+ * 2.0.0      8 Aug 2021      Sanath       Created for RECRUITMENT Job Post
  
 */
 
@@ -246,3 +246,4 @@ define(['N/log', 'N/search', 'N/format', 'N/runtime', '../Modules/PRSUITE_moment
         };
 
     });
+    
